@@ -2,7 +2,7 @@
 /* Written by Daniel Neemann */
 :root {
   /* Colors */
-  --xanthia-background-color: #B14C3D;
+  --xanthia-background-color: #E3B9C6;
   --xanthia-text-color: #141414;
   --xanthia-opacity: 0.95;
   --xanthia-shadow: 0px 4px 10px 4px transparent;
@@ -18,7 +18,7 @@
   --xanthia-alignment-bottom: auto;
   --xanthia-alignment-left: auto;
   /* Bar's total height including --border and excluding padding */
-  --xanthia-height: 35px;
+  --xanthia-height: 29px;
   /* Corner radius (for rounded corners) */
   --xanthia-border-radius: 5px;
   /* Mono font recommended (alignment depends on character width) */
@@ -27,8 +27,8 @@
   --xanthia-font-style: none;
   --xanthia-text-padding: 3ch;
   /* Fade */
-  --xanthia-time-visible: 10s;
-  --xanthia-fade: 5s;
+  --xanthia-time-visible: 0s;
+  --xanthia-fade: 30s;
 }
 
 /* Get monitor width */
@@ -62,7 +62,10 @@
 }
 
 @keyframes cssAnimation {
-  to {
+  0%, 100% {
     opacity: 0;
+  }
+  4%, 96% {
+    opacity: 1;
   }
 }

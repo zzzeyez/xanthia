@@ -26,7 +26,7 @@
 	--xanthia-alignment-left: auto;
 
 	/* Bar's total height including --border and excluding padding */
-  	--xanthia-height: 35px;
+  	--xanthia-height: 29px;
 
 	/* Corner radius (for rounded corners) */
 	--xanthia-border-radius: 5px;
@@ -38,8 +38,8 @@
   	--xanthia-text-padding: 3ch;
 
 	/* Fade */
-	--xanthia-time-visible: 10s;
-	--xanthia-fade: 5s;
+	--xanthia-time-visible: 0s;
+	--xanthia-fade: 30s;
 }
 
 /* Get monitor width */
@@ -73,7 +73,6 @@
 }
 
 @keyframes cssAnimation {
-    to {
-		opacity: 0;
-	}
+    0%,100% { opacity: 0; }
+	4%,96% { opacity: 1; }
 }
