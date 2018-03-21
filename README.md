@@ -18,6 +18,6 @@ Xanthia includes a script to make notifications appear.  Use the included `notif
 So, assuming `notify-send` is in your path, you can enter this into `Weechat` for notifications:
 
 ```
-/set trigger.trigger.beep.command "/exec notify-send '${tg_tag_nick}: ${tg_message_nocolor}'"
+/set trigger.trigger.beep.command "/exec -norc notify-send '${tg_tag_nick}: ${tg_message_nocolor}'"
 ```
 
