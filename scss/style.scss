@@ -27,7 +27,7 @@
 
 	/* size */
   	--xanthia-max-width: 50ch;
-	--xanthia-max-height: calc(var(--xanthia-line-height) * 2);
+	--xanthia-max-height: calc(var(--xanthia-line-height) * 1);
 	--xanthia-min-width: none;
 	--xanthia-min-height: none;
 
@@ -84,5 +84,5 @@
 
 @keyframes cssAnimation {
     0%,100% { opacity: 0; }
-	4%,96% { opacity: var(--xanthia-opacity); }
+	1%,99% { opacity: var(--xanthia-opacity); }
 }
