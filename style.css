@@ -13,9 +13,9 @@
   /* Alignment */
   /* Set 0 to where you want bar aligned */
   /* and "auto" where you don't */
-  --xanthia-alignment-top: 0;
+  --xanthia-alignment-top: var(--pecan-alignment-top, 0);
   --xanthia-alignment-right: 0;
-  --xanthia-alignment-bottom: auto;
+  --xanthia-alignment-bottom: var(--pecan-alignment-bottom, auto);
   --xanthia-alignment-left: auto;
   /* size */
   --xanthia-max-width: 50ch;
@@ -31,7 +31,7 @@
   --xanthia-text-padding: 3ch;
   --xanthia-line-height: var(--pecan-xanthia-height, 29px);
   /* Fade */
-  --xanthia-time-visible: 60s;
+  --xanthia-time-visible: 6s;
 }
 
 /* Get monitor width */
