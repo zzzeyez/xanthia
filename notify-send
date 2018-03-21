@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Author Daniel Neemann
 
+echo "$1" > /tmp/notify &&
 osascript <<EOD
   tell application "Übersicht"
   	refresh widget id "Xanthia-notify-coffee"

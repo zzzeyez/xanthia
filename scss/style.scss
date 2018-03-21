@@ -1,4 +1,4 @@
-/* Xanthia is a bar for Ubersicht */
+/* Xanthia is a notification system for Ubersicht */
 /* Written by Daniel Neemann */
 
 // Import Colors
@@ -7,15 +7,15 @@
 :root {
 
 	/* Colors */
-	--xanthia-background-color: $color4;
-  	--xanthia-text-color: $color0;
-  	--xanthia-opacity: 0.95;
-  	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
+	--xanthia-background-color: var(--pecan-xanthia-bg, #DFDFDF);
+  	--xanthia-text-color: var(--pecan-xanthia-fg, #090909);
+  	--xanthia-opacity: var(--pecan-opacity-inner, 0.9);
+  	--xanthia-shadow: var(--pecan-shadow-inner, 0px 4px 10px 4px rgba(0,0,0,0.04));
   
   	/* Padding from edge of screen */
 	/* To position top/right/bottom/left see Alignment */
-  	--xanthia-margin-vertical: 10px;
-  	--xanthia-margin-horizontal: 225px;
+  	--xanthia-margin-vertical: var(--pecan-xanthia-vertical, 30px);
+  	--xanthia-margin-horizontal: var(--pecan-xanthia-horizontal, 10px);
 
 	/* Alignment */
 	/* Set 0 to where you want bar aligned */
@@ -25,21 +25,25 @@
 	--xanthia-alignment-bottom: auto;
 	--xanthia-alignment-left: auto;
 
-	/* Bar's total height including --border and excluding padding */
-  	--xanthia-height: 29px;
+	/* size */
+  	--xanthia-max-width: 50ch;
+	--xanthia-max-height: calc(var(--xanthia-line-height) * 2);
+	--xanthia-min-width: none;
+	--xanthia-min-height: none;
 
 	/* Corner radius (for rounded corners) */
-	--xanthia-border-radius: 5px;
+	--xanthia-border-radius: var(--pecan-border-radius-inner, 5px);
 
-	/* Mono font recommended (alignment depends on character width) */
-  	--xanthia-font: SF Mono;
-  	--xanthia-font-size: 12px;
-  	--xanthia-font-style: none;
+	/* Typography */
+  	--xanthia-font: var(--pecan-font, Lucida Grande);
+  	--xanthia-font-size: var(--pecan-font-size, 12px);
+  	--xanthia-font-style: var(--pecan-font-style, none);
   	--xanthia-text-padding: 3ch;
+	--xanthia-line-height: var(--pecan-xanthia-height, 29px);
 
 	/* Fade */
-	--xanthia-time-visible: 0s;
-	--xanthia-fade: 30s;
+	--xanthia-time-visible: 60s;
+
 }
 
 /* Get monitor width */
@@ -61,18 +65,24 @@
 	bottom: var(--xanthia-alignment-bottom);
 	left: var(--xanthia-alignment-left);
   	padding: 0px var(--xanthia-text-padding);
-  	margin-top: var(--xanthia-margin-vertical);
+	overflow: hidden;
+	text-overflow: clip ellipsis;
+	min-width: var(--xanthia-min-width);
+	min-height: var(--xanthia-min-height);
+	max-width: var(--xanthia-max-width);
+	max-height: var(--xanthia-max-height);
+	margin-top: var(--xanthia-margin-vertical);
 	margin-right: var(--xanthia-margin-horizontal);
 	margin-bottom: var(--xanthia-margin-vertical);
 	margin-left: var(--xanthia-margin-horizontal);
-  	line-height: var(--xanthia-height);
+	line-height: var(--xanthia-line-height);
 	border-radius: var(--xanthia-border-radius);
 	box-shadow: var(--xanthia-shadow);
 	z-index: 2;
-  	animation: cssAnimation var(--xanthia-fade) ease-in var(--xanthia-time-visible) forwards;
+  	animation: cssAnimation var(--xanthia-time-visible) ease-in 0 forwards;
 }
 
 @keyframes cssAnimation {
     0%,100% { opacity: 0; }
-	4%,96% { opacity: 1; }
+	4%,96% { opacity: var(--xanthia-opacity); }
 }
