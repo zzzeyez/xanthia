@@ -10,7 +10,7 @@
 	--xanthia-background-color: var(--pecan-xanthia-bg, #DFDFDF);
   	--xanthia-text-color: var(--pecan-xanthia-fg, #090909);
   	--xanthia-opacity: var(--pecan-opacity-inner, 0.9);
-  	--xanthia-shadow: var(--pecan-shadow-inner, 0px 4px 10px 4px rgba(0,0,0,0.04));
+  	--xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
   
   	/* Padding from edge of screen */
 	/* To position top/right/bottom/left see Alignment */
@@ -26,13 +26,13 @@
 	--xanthia-alignment-left: auto;
 
 	/* size */
-  	--xanthia-max-width: 50ch;
+  	--xanthia-max-width: var(--pecan-xanthia-width, 300px);
 	--xanthia-max-height: calc(var(--xanthia-line-height) * 1);
 	--xanthia-min-width: none;
 	--xanthia-min-height: none;
 
 	/* Corner radius (for rounded corners) */
-	--xanthia-border-radius: var(--pecan-border-radius-inner, 5px);
+	--xanthia-border-radius: var(--pecan-xanthia-border-radius, 5px);
 
 	/* Typography */
   	--xanthia-font: var(--pecan-font, Lucida Grande);
