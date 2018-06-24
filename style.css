@@ -54,7 +54,7 @@
   left: var(--xanthia-alignment-left);
   padding: 0px var(--xanthia-text-padding);
   overflow: hidden;
-  text-overflow: clip ellipsis;
+  text-overflow: ellipsis;
   min-width: var(--xanthia-min-width);
   min-height: var(--xanthia-min-height);
   max-width: var(--xanthia-max-width);
