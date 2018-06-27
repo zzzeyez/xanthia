@@ -9,6 +9,6 @@ osascript <<EOD
   	refresh widget id "Xanthia-notify-coffee"
   end tell
 EOD
-else
-	echo "ubersicht is not running"
+#else
+#	echo "ubersicht is not running"
 fi
