@@ -17,9 +17,9 @@ Xanthia requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht
 git clone https://github.com/zzzeyez/Xanthia.git $HOME/Library/Application\ Support/Übersicht/widgets/Xanthia
 ```
 
-If Übersicht is running, then the bar should appear.
+Xanthia includes a script to make notifications appear.  Until you use this script, you will receive an error.
 
-Xanthia includes a script to make notifications appear.  Use the included `notify-send` like so:
+Use the included `notify-send` like so:
 
 ```
 ./notify-send "New message"
