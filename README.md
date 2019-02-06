@@ -17,9 +17,13 @@ Xanthia requires [Übersicht](http://tracesof.net/uebersicht/).  Once Übersicht
 git clone https://github.com/zzzeyez/Xanthia.git $HOME/Library/Application\ Support/Übersicht/widgets/Xanthia
 ```
 
-Xanthia includes a script to make notifications appear.  Until you use this script, you will receive an error.
+Xanthia includes a script to make notifications appear.  First you will need to create a file for it to use though.
 
-Use the included `notify-send` like so:
+```
+touch /tmp/notify/
+```
+
+Now you can use the included `notify-send` to create notifications, like so:
 
 ```
 ./notify-send "New message"

@@ -41,7 +41,7 @@
 }
 
 .notify {
-  display: block;
+  display: inline-block;
   position: absolute;
   color: var(--xanthia-text-color);
   font: var(--xanthia-font-size) var(--xanthia-font);
