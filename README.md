@@ -29,10 +29,10 @@ Now you can use the included `notify-send` to create notifications, like so:
 ./notify-send "New message"
 ```
 
-So, assuming `notify-send` is in your path, you can enter this into `Weechat` for notifications:
+So, assuming `notify-send` is in your $PATH, you can enter this into `Weechat` for notifications:
 
 ```
-/set trigger.trigger.beep.command "/exec -norc notify-send '${tg_tag_nick}: ${tg_message_nocolor}'"
+/set trigger.trigger.beep.command /exec -norc notify-send "${tg_tag_nick}: ${tg_message_nocolor}"
 ```
 
 #### Wal
