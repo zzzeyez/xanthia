@@ -54,6 +54,6 @@ sed -i -e "s/zzzeyez/$USER/g" ~/Library/Application\ Support/Übersicht/widgets/
 Now you can run the script to use Wal's palettes:
 
 ```
-bash ~/Library/Application\ Support/Übersicht/widgets/Pecan/wal-set
+bash ~/Library/Application\ Support/Übersicht/widgets/Xanthia/wal-set
 ```
 
