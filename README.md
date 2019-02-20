@@ -23,17 +23,25 @@ Xanthia includes a script to make notifications appear.  First you will need to 
 touch /tmp/notify/
 ```
 
+I suggest placing `notify-send` in your $PATH so that you don't have to type out it's full location:
+
+```
+ln -s "$HOME/Library/Application Support/Übersicht/widgets/Pecan/pecan-style" "/usr/local/bin"
+```
+
 Now you can use the included `notify-send` to create notifications, like so:
 
 ```
-./notify-send "New message"
+notify-send "New message"
 ```
 
-So, assuming `notify-send` is in your $PATH, you can enter this into `Weechat` for notifications:
+So, for example, you can enter this into `Weechat` for notifications:
 
 ```
 /set trigger.trigger.beep.command /exec -norc notify-send "${tg_tag_nick}: ${tg_message_nocolor}"
 ```
+
+The other use-case scenarios are up to you.  Another common use is displaying what song you are listening to in `ncmpcpp`.
 
 #### Wal
 
