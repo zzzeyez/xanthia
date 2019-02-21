@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 # Author Daniel Neemann
 
-if ps ax | grep -v grep | grep uber > /dev/null
-then
+#if ps ax | grep -v grep | grep uber > /dev/null
+#then
 echo "$1" > /tmp/notify &&
-osascript <<EOD
-  tell application "Übersicht"
-  	refresh widget id "Xanthia-notify-coffee"
-  end tell
-EOD
+osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Xanthia-notify-coffee"'
 #else
 #	echo "ubersicht is not running"
-fi
+#fi
