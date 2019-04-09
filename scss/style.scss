@@ -41,7 +41,10 @@
   	--xanthia-text-padding: 3ch;
 	--xanthia-line-height: var(--pecan-xanthia-height, 29px);
 
-	/* Fade */
+	/* Time spent on screen */
+	/* set to 'auto' for infinite */
+	/* cssanimation values at bottom of file */
+	/* reprent fade-in and fade-out time */
 	--xanthia-time-visible: auto;
 
 }
@@ -82,7 +85,13 @@
   	animation: cssAnimation var(--xanthia-time-visible) ease-in 0 forwards;
 }
 
+/* These two percentages refer to which */
+/* percentage of the time on-screen that is */
+/* spent fading. */
+/* Fade will not apply if --xanthia-time-visible */
+/* is set to 'auto' */
+
 @keyframes cssAnimation {
     0%,100% { opacity: 0; }
-	1%,99% { opacity: var(--xanthia-opacity); }
+	20%,80% { opacity: var(--xanthia-opacity); }
 }
