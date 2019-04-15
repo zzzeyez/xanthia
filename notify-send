@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
-# Author Daniel Neemann
+#
+# author: daniel neemann (@zzzeyez)
+#
+# displays notifications on macos
+# requires `ubersicht` and `imagemagick`
 
-exists () {
+# where is cache
+cache="${HOME}/.cache/xanthia/"
+image="$cache/xanthia.png"
+
+exists() {
     type "$1" &> /dev/null ;
 }
 
+setup() {
+	mkdir -p "$cache"
+}
+
 icon() {
-	convert "$1" ${HOME}/scripts/albumart/current.jpg
+	convert "$1" "$image"
 	ps cax | grep sicht > /dev/null
 	if [ $? -eq 0 ]; then
 	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
-		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-image-coffee"'
+	head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-image-coffee"'
 	fi
 }
 
@@ -19,28 +31,30 @@ notify() {
 	ps cax | grep sicht > /dev/null
 	if [ $? -eq 0 ]; then
 		osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
-			head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Xanthia-notify-coffee"'
+		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Xanthia-notify-coffee"'
 	elif exists /usr/local/bin/terminal-notifier
 	then
-		terminal-notifier -message "$(cat /tmp/notify)" -appIcon "${HOME}/scripts/albumart/current.jpg"
+		terminal-notifier -message "$(cat /tmp/notify)" -appIcon "$image"
 	else
 		exit
 	fi
 }
 
 multiple() {
-  while getopts m:i: opt; do
-      case $opt in
-          m) notify "$OPTARG"
-          ;;
-          i) icon "$OPTARG"
-          ;;
-    esac
-  done
+	while getopts m:i: opt; do
+		case $opt in
+		m) notify "$OPTARG"
+		;;
+		i) icon "$OPTARG"
+		;;
+	esac
+	done
 }
 
 if [ "$#" -gt 1 ]; then
-  multiple "$@"
+	setup
+	flags "$@"
 else
-  notify "$@"
+	setup
+	notify "$@"
 fi
