@@ -5,14 +5,42 @@ exists () {
     type "$1" &> /dev/null ;
 }
 
-echo "$1" > /tmp/notify &&
+icon() {
+	convert "$1" ${HOME}/scripts/albumart/current.jpg
+	ps cax | grep sicht > /dev/null
+	if [ $? -eq 0 ]; then
+	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
+		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "albumart-style-coffee"'
+	fi
+}
 
-ps cax | grep sicht > /dev/null
-if [ $? -eq 0 ]; then
-	osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Xanthia-notify-coffee"'
-elif exists /usr/local/bin/terminal-notifier 
-then
-	terminal-notifier -message "$(cat /tmp/notify)"
+notify() {
+	echo "$1" > /tmp/notify &&
+	ps cax | grep sicht > /dev/null
+	if [ $? -eq 0 ]; then
+		osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
+			head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "Xanthia-notify-coffee"'
+	elif exists /usr/local/bin/terminal-notifier
+	then
+		terminal-notifier -message "$(cat /tmp/notify)" -appIcon "${HOME}/scripts/albumart/current.jpg"
+	else
+		exit
+	fi
+}
+
+multiple() {
+  while getopts m:i: opt; do
+      case $opt in
+          m) notify "$OPTARG"
+          ;;
+          i) icon "$OPTARG"
+          ;;
+    esac
+  done
+}
+
+if [ "$#" -gt 1 ]; then
+  multiple "$@"
 else
-	exit
+  notify "$@"
 fi

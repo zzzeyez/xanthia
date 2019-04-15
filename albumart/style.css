@@ -1,0 +1,81 @@
+/* Xanthia is a bar for Ubersicht */
+/* Written by Daniel Neemann */
+:root {
+  /* Colors */
+  --albumart-background-color: #dde0df;
+  --albumart-text-color: #dde0df;
+  --albumart-opacity: 1;
+  --albumart-shadow: 0px 4px 10px 4px rgba(0,0,0,0.2);
+  /* Padding from edge of screen */
+  /* To position top/right/bottom/left see Alignment */
+  --albumart-margin-vertical: 51px;
+  --albumart-margin-horizontal: 15px;
+  /* Alignment */
+  /* Set 0 to where you want bar aligned */
+  /* and "auto" where you don't */
+  --albumart-alignment-top: 0;
+  --albumart-alignment-right: 0;
+  --albumart-alignment-bottom: auto;
+  --albumart-alignment-left: auto;
+  /* Bar's total height including --border and excluding padding */
+  --albumart-size: 150px;
+  /* Corner radius (for rounded corners) */
+  --albumart-border-radius: 8px;
+  /* Mono font recommended (alignment depends on character width) */
+  --albumart-font: SF Mono;
+  --albumart-font-size: 12px;
+  --albumart-font-style: none;
+  --albumart-text-padding: 0;
+  /* Fade */
+  --albumart-time-visible: 60s;
+}
+
+/* Get monitor width */
+.screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.albumart {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: var(--albumart-text-color);
+  font: var(--albumart-font-size) var(--albumart-font);
+  font-style: var(--albumart-font-style);
+  background-color: var(--albumart-background-color);
+	#  opacity: var(--albumart-opacity);
+  top: var(--albumart-alignment-top);
+  right: var(--albumart-alignment-right);
+  bottom: var(--albumart-alignment-bottom);
+  left: var(--albumart-alignment-left);
+  padding: 0px var(--albumart-text-padding);
+  margin-top: var(--albumart-margin-vertical);
+  margin-right: var(--albumart-margin-horizontal);
+  margin-bottom: var(--albumart-margin-vertical);
+  margin-left: var(--albumart-margin-horizontal);
+  line-height: var(--albumart-height);
+  border-radius: var(--albumart-border-radius);
+  box-shadow: var(--albumart-shadow);
+  z-index: 2;
+	animation: fadeinout var(--albumart-time-visible) linear forwards;
+    opacity: 1;
+}
+
+.pic {
+  width: var(--albumart-size);
+  height: var(--albumart-size);
+  margin-top: var(--albumart-text-padding);
+  margin-bottom: var(--albumart-text-padding);
+  position: relative;
+  display: block;
+  background: url("/albumart/current.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+	4%,96% { opacity: 1; }
+}

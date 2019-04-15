@@ -1,0 +1,90 @@
+/* Xanthia is a bar for Ubersicht */
+/* Written by Daniel Neemann */
+
+// Import Colors
+@import "/Users/zzzeyez/.cache/wal/colors.scss";
+
+:root {
+
+	/* Colors */
+	--xanthia-background-color: $color0;
+  	--xanthia-text-color: $color0;
+  	--xanthia-opacity: 1;
+  	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
+  
+  	/* Padding from edge of screen */
+	/* To position top/right/bottom/left see Alignment */
+  	--xanthia-margin-vertical: 10px;
+  	--xanthia-margin-horizontal: 10px;
+
+	/* Alignment */
+	/* Set 0 to where you want bar aligned */
+	/* and "auto" where you don't */
+	--xanthia-alignment-top: auto;
+	--xanthia-alignment-right: 0;
+	--xanthia-alignment-bottom: 0;
+	--xanthia-alignment-left: auto;
+
+	/* Bar's total height including --border and excluding padding */
+  	--xanthia-height: 35px;
+
+	/* Corner radius (for rounded corners) */
+	--xanthia-border-radius: 5px;
+
+	/* Mono font recommended (alignment depends on character width) */
+  	--xanthia-font: SF Mono;
+  	--xanthia-font-size: 12px;
+  	--xanthia-font-style: none;
+  	--xanthia-text-padding: 3ch;
+
+	/* Fade */
+	--xanthia-time-visible: 10s;
+	--xanthia-fade: 5s;
+}
+
+/* Get monitor width */
+.screen {
+  	width: 100vw;
+  	height: 100vh;
+}
+
+.albumart {
+  	display: block;
+  	position: absolute;
+	color: var(--xanthia-text-color);
+  	font: var(--xanthia-font-size) var(--xanthia-font);
+	font-style: var(--xanthia-font-style);
+  	background-color: var(--xanthia-background-color);
+  	opacity: var(--xanthia-opacity);
+  	top: var(--xanthia-alignment-top);
+	right: var(--xanthia-alignment-right);
+	bottom: var(--xanthia-alignment-bottom);
+	left: var(--xanthia-alignment-left);
+  	padding: 0px var(--xanthia-text-padding);
+  	margin-top: var(--xanthia-margin-vertical);
+	margin-right: var(--xanthia-margin-horizontal);
+	margin-bottom: var(--xanthia-margin-vertical);
+	margin-left: var(--xanthia-margin-horizontal);
+  	line-height: var(--xanthia-height);
+	border-radius: var(--xanthia-border-radius);
+	box-shadow: var(--xanthia-shadow);
+	z-index: 2;
+  	/* animation: cssAnimation var(--xanthia-fade) ease-in var(--xanthia-time-visible) forwards; */
+}
+
+.pic {
+	width: 120px;
+	height: 120px;
+	margin-top: var(--xanthia-text-padding);
+	margin-bottom: var(--xanthia-text-padding);
+	position: relative;
+	display: block;
+	background: url("/Xanthia/current.jpg");
+	background-size: 100% 100%;
+}
+
+@keyframes cssAnimation {
+    to {
+		opacity: 0;
+	}
+}
