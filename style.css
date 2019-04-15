@@ -1,145 +1,138 @@
-/* Xanthia is a notification system for Ubersicht */
+/* xanthia is a notification system for ubersicht */
 /* Written by Daniel Neemann */
 :root {
-  /* Colors */
-  --xanthia-background-color: var(--pecan-xanthia-bg, #DFDFDF);
-  --xanthia-text-color: var(--pecan-xanthia-fg, #090909);
-  --xanthia-opacity: var(--pecan-opacity-inner, 0.9);
-  --xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
-  /* Padding from edge of screen */
-  /* To position top/right/bottom/left see Alignment */
-  --xanthia-margin-vertical: var(--pecan-xanthia-vertical, 30px);
-  --xanthia-margin-horizontal: var(--pecan-xanthia-horizontal, 10px);
-  /* Alignment */
-  /* Set 0 to where you want bar aligned */
-  /* and "auto" where you don't */
-  --xanthia-alignment-top: var(--pecan-alignment-top, 0);
-  --xanthia-alignment-right: 0;
-  --xanthia-alignment-bottom: var(--pecan-alignment-bottom, auto);
-  --xanthia-alignment-left: auto;
-  /* size */
-  --xanthia-max-width: var(--pecan-xanthia-width, 300px);
-  --xanthia-max-height: calc(var(--xanthia-line-height) * 1);
-  --xanthia-min-width: none;
-  --xanthia-min-height: none;
-  /* Corner radius (for rounded corners) */
-  --xanthia-border-radius: var(--pecan-xanthia-border-radius, 5px);
-  /* Typography */
-  --xanthia-font: var(--pecan-font, Lucida Grande);
-  --xanthia-font-size: var(--pecan-font-size, 12px);
-  --xanthia-font-style: var(--pecan-font-style, none);
-  --xanthia-text-padding: 3ch;
-  --xanthia-line-height: var(--pecan-xanthia-height, 29px);
-  /* Time spent on screen */
-  /* set to 'auto' for infinite */
-  /* cssanimation values at bottom of file */
-  /* reprent fade-in and fade-out time */
-  --xanthia-time-visible: auto;
+	/* Colors */
+	--xanthia-background-color: var(--pecan-xanthia-bg, #DFDFDF);
+	--xanthia-text-color: var(--pecan-xanthia-fg, #090909);
+	--xanthia-opacity: var(--pecan-opacity-inner, 0.9);
+	--xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
+	/* Padding from edge of screen */
+	/* To position top/right/bottom/left see Alignment */
+	--xanthia-margin-vertical: var(--pecan-xanthia-vertical, 30px);
+	--xanthia-margin-horizontal: var(--pecan-xanthia-horizontal, 10px);
+ 	/* Alignment */
+	/* Set 0 to where you want bar aligned */
+	/* and "auto" where you don't */
+	--xanthia-alignment-top: var(--pecan-alignment-top, 0);
+	--xanthia-alignment-right: 0;
+	--xanthia-alignment-bottom: var(--pecan-alignment-bottom, auto);
+	--xanthia-alignment-left: auto;
+	/* size */
+	--xanthia-max-width: var(--pecan-xanthia-width, 300px);
+	--xanthia-max-height: calc(var(--xanthia-line-height) * 1);
+	--xanthia-min-width: none;
+	--xanthia-min-height: none;
+	/* Corner radius (for rounded corners) */--xanthia-border-radius: var(--pecan-xanthia-border-radius, 5px);
+	/* Typography */
+	--xanthia-font: var(--pecan-font, Lucida Grande);
+	--xanthia-font-size: var(--pecan-font-size, 12px);
+	--xanthia-font-style: var(--pecan-font-style, none);
+	--xanthia-text-padding: 3ch;
+	--xanthia-line-height: var(--pecan-xanthia-height, 29px);
+	/* Time spent on screen */
+	/* set to 'auto' for infinite */
+	/* cssanimation values at bottom of file */
+	/* reprent fade-in and fade-out time */
+	--xanthia-time-visible: var(--pecan-xanthia-time-visible, 30s);
   
-  /* Colors */
-  --albumart-background-color: #dde0df;
-  --albumart-text-color: #dde0df;
-  --albumart-opacity: 1;
-  --albumart-shadow: 0px 4px 10px 4px rgba(0,0,0,0.2);
-  /* Padding from edge of screen */
-  /* To position top/right/bottom/left see Alignment */
-  --albumart-margin-vertical: 51px;
-  --albumart-margin-horizontal: 15px;
-  /* Alignment */
-  /* Set 0 to where you want bar aligned */
-  /* and "auto" where you don't */
-  --albumart-alignment-top: 0;
-  --albumart-alignment-right: 0;
-  --albumart-alignment-bottom: auto;
-  --albumart-alignment-left: auto;
-  /* Bar's total height including --border and excluding padding */
-  --albumart-size: 150px;
-  /* Corner radius (for rounded corners) */
-  --albumart-border-radius: 8px;
-  /* Mono font recommended (alignment depends on character width) */
-  --albumart-font: SF Mono;
-  --albumart-font-size: 12px;
-  --albumart-font-style: none;
-  --albumart-text-padding: 0;
-  /* Fade */
-  --albumart-time-visible: 60s;
+	/* Colors */
+	--xanthia-image-background-color: var(--pecan-xanthia-image-background-color, #dde0df);
+	--xanthia-image-text-color: var(--pecan-xanthia-image-text-color, #dde0df);
+	--xanthia-image-opacity: var(--pecan-xanthia-image-opacity, 1);
+	--xanthia-image-shadow: var(--pecan-xanthia-image-shadow, 0px 4px 10px 4px rgba(0,0,0,0.2));
+	/* Padding from edge of screen */
+	/* To position top/right/bottom/left see Alignment */
+	--xanthia-image-margin-vertical: var(--pecan-xanthia-image-margin-vertical, 51px);
+	--xanthia-image-margin-horizontal: var(--pecan-xanthia-image-margin-horizontal, 15px);
+	/* Alignment */
+	/* Set 0 to where you want bar aligned */
+	/* and "auto" where you don't */
+	--xanthia-image-alignment-top: var(--pecan-xanthia-image-alignment-top, 0);
+	--xanthia-image-alignment-right: var(--pecan-xanthia-image-alignment-top, 0);
+	--xanthia-image-alignment-bottom: var(--pecan-xanthia-image-alignment-bottom, auto);
+	--xanthia-image-alignment-left: var(--pecan-xanthia-image-alignment-left, auto);
+	/* Bar's total height including --border and excluding padding */
+	--xanthia-image-size: var(--pecan-xanthia-image-size, 150px);
+	/* Corner radius (for rounded corners) */
+	--xanthia-image-border-radius: var(--pecan-xanthia-image-border-radius, 8px);
+	/* idk what this is tbh*/
+	--xanthia-image-padding: var(--pecan-xanthia-image-padding, 0);
+	/* Fade */
+	--xanthia-image-time-visible: var(--pecan-xanthia-image-time-visible, 30s);
 }
 
 /* Get monitor width */
 .screen {
-  width: 100vw;
-  height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 
-.notify {
-  display: inline-block;
-  position: absolute;
-  color: var(--xanthia-text-color);
-  font: var(--xanthia-font-size) var(--xanthia-font);
-  font-style: var(--xanthia-font-style);
-  background-color: var(--xanthia-background-color);
-  opacity: var(--xanthia-opacity);
-  top: var(--xanthia-alignment-top);
-  right: var(--xanthia-alignment-right);
-  bottom: var(--xanthia-alignment-bottom);
-  left: var(--xanthia-alignment-left);
-  padding: 0px var(--xanthia-text-padding);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: var(--xanthia-min-width);
-  min-height: var(--xanthia-min-height);
-  max-width: var(--xanthia-max-width);
-  max-height: var(--xanthia-max-height);
-  margin-top: var(--xanthia-margin-vertical);
-  margin-right: var(--xanthia-margin-horizontal);
-  margin-bottom: var(--xanthia-margin-vertical);
-  margin-left: var(--xanthia-margin-horizontal);
-  line-height: var(--xanthia-line-height);
-  border-radius: var(--xanthia-border-radius);
-  box-shadow: var(--xanthia-shadow);
-  z-index: 3;
-  animation: fadeinout var(--xanthia-time-visible) linear forwards;
+.xanthiamessage {
+	display: inline-block;
+	position: absolute;
+	color: var(--xanthia-text-color);
+	font: var(--xanthia-font-size) var(--xanthia-font);
+	font-style: var(--xanthia-font-style);
+	background-color: var(--xanthia-background-color);
+	opacity: var(--xanthia-opacity);
+	top: var(--xanthia-alignment-top);
+	right: var(--xanthia-alignment-right);
+	bottom: var(--xanthia-alignment-bottom);
+	left: var(--xanthia-alignment-left);
+	padding: 0px var(--xanthia-text-padding);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: var(--xanthia-min-width);
+	min-height: var(--xanthia-min-height);
+	max-width: var(--xanthia-max-width);
+	max-height: var(--xanthia-max-height);
+	margin-top: var(--xanthia-margin-vertical);
+	margin-right: var(--xanthia-margin-horizontal);
+	margin-bottom: var(--xanthia-margin-vertical);
+	margin-left: var(--xanthia-margin-horizontal);
+	line-height: var(--xanthia-line-height);
+	border-radius: var(--xanthia-border-radius);
+	box-shadow: var(--xanthia-shadow);
+	z-index: 3;
+	animation: fadeinout var(--xanthia-time-visible) linear forwards;
 }
 
-.albumart {
-  display: block;
-  position: absolute;
-  overflow: hidden;
-  color: var(--albumart-text-color);
-  font: var(--albumart-font-size) var(--albumart-font);
-  font-style: var(--albumart-font-style);
-  background-color: var(--albumart-background-color);
-	opacity: var(--albumart-opacity);
-  top: var(--albumart-alignment-top);
-  right: var(--albumart-alignment-right);
-  bottom: var(--albumart-alignment-bottom);
-  left: var(--albumart-alignment-left);
-  padding: 0px var(--albumart-text-padding);
-  margin-top: var(--albumart-margin-vertical);
-  margin-right: var(--albumart-margin-horizontal);
-  margin-bottom: var(--albumart-margin-vertical);
-  margin-left: var(--albumart-margin-horizontal);
-  line-height: var(--albumart-height);
-  border-radius: var(--albumart-border-radius);
-  box-shadow: var(--albumart-shadow);
-  z-index: 2;
-	animation: fadeinout var(--albumart-time-visible) linear forwards;
+.xanthiaimagecontainer {
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	background-color: var(--xanthia-image-background-color);
+	opacity: var(--xanthia-image-opacity);
+	top: var(--xanthia-image-alignment-top);
+	right: var(--xanthia-image-alignment-right);
+	bottom: var(--xanthia-image-alignment-bottom);
+	left: var(--xanthia-image-alignment-left);
+	padding: var(--xanthia-image-padding);
+	margin-top: var(--xanthia-image-margin-vertical);
+	margin-right: var(--xanthia-image-margin-horizontal);
+	margin-bottom: var(--xanthia-image-margin-vertical);
+	margin-left: var(--xanthia-image-margin-horizontal);
+	line-height: var(--xanthia-image-height);
+	border-radius: var(--xanthia-image-border-radius);
+	box-shadow: var(--xanthia-image-shadow);
+	z-index: 2;
+	animation: fadeinout var(--xanthia-image-time-visible) linear forwards;
 }
 
-.pic {
-  width: var(--albumart-size);
-  height: var(--albumart-size);
-  margin-top: var(--albumart-text-padding);
-  margin-bottom: var(--albumart-text-padding);
-  position: relative;
-  display: block;
-  background: url("/albumart/current.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.xanthiaimage {
+	width: var(-xanthia-image-size);
+	height: var(--xanthia-image-size);
+	margin-top: var(--xanthia-image-padding);
+	margin-bottom: var(--xanthia-image-padding);
+	position: relative;
+	display: block;
+	background: url("/albumart/current.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 @keyframes fadeinout {
-  0%,100% { opacity: 0; }
+	0%,100% { opacity: 0; }
 	4%,96% { opacity: 1; }
 }
