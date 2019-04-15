@@ -47,51 +47,118 @@
 	/* reprent fade-in and fade-out time */
 	--xanthia-time-visible: auto;
 
+	/* Colors */
+	--albumart-background-color: #{$color7};
+  	--albumart-text-color: #{$color7};
+  	--albumart-opacity: 1;
+  	--albumart-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
+  
+  	/* Padding from edge of screen */
+	/* To position top/right/bottom/left see Alignment */
+  	--albumart-margin-vertical: 10px;
+  	--albumart-margin-horizontal: 10px;
+
+	/* Alignment */
+	/* Set 0 to where you want bar aligned */
+	/* and "auto" where you don't */
+	--albumart-alignment-top: auto;
+	--albumart-alignment-right: 0;
+	--albumart-alignment-bottom: 0;
+	--albumart-alignment-left: auto;
+
+	/* Bar's total height including --border and excluding padding */
+  	--albumart-height: 35px;
+
+	/* Corner radius (for rounded corners) */
+	--albumart-border-radius: 5px;
+
+	/* Mono font recommended (alignment depends on character width) */
+  	--albumart-font: SF Mono;
+  	--albumart-font-size: 12px;
+  	--albumart-font-style: none;
+  	--albumart-text-padding: 1ch;
+
+	/* Fade */
+	--albumart-time-visible: 10s;
+	--albumart-fade: 5s;
 }
 
 /* Get monitor width */
 .screen {
   	width: 100vw;
   	height: 100vh;
+	
 }
 
 .notify {
-  	display: inline-block;
-  	position: absolute;
-	color: var(--xanthia-text-color);
-  	font: var(--xanthia-font-size) var(--xanthia-font);
-	font-style: var(--xanthia-font-style);
-  	background-color: var(--xanthia-background-color);
-  	opacity: var(--xanthia-opacity);
-  	top: var(--xanthia-alignment-top);
-	right: var(--xanthia-alignment-right);
-	bottom: var(--xanthia-alignment-bottom);
-	left: var(--xanthia-alignment-left);
-  	padding: 0px var(--xanthia-text-padding);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	min-width: var(--xanthia-min-width);
-	min-height: var(--xanthia-min-height);
-	max-width: var(--xanthia-max-width);
-	max-height: var(--xanthia-max-height);
-	margin-top: var(--xanthia-margin-vertical);
-	margin-right: var(--xanthia-margin-horizontal);
-	margin-bottom: var(--xanthia-margin-vertical);
-	margin-left: var(--xanthia-margin-horizontal);
-	line-height: var(--xanthia-line-height);
-	border-radius: var(--xanthia-border-radius);
-	box-shadow: var(--xanthia-shadow);
-	z-index: 3;
-  	animation: cssAnimation var(--xanthia-time-visible) ease-in 0 forwards;
+  display: inline-block;
+  position: absolute;
+  color: var(--xanthia-text-color);
+  font: var(--xanthia-font-size) var(--xanthia-font);
+  font-style: var(--xanthia-font-style);
+  background-color: var(--xanthia-background-color);
+  opacity: var(--xanthia-opacity);
+  top: var(--xanthia-alignment-top);
+  right: var(--xanthia-alignment-right);
+  bottom: var(--xanthia-alignment-bottom);
+  left: var(--xanthia-alignment-left);
+  padding: 0px var(--xanthia-text-padding);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: var(--xanthia-min-width);
+  min-height: var(--xanthia-min-height);
+  max-width: var(--xanthia-max-width);
+  max-height: var(--xanthia-max-height);
+  margin-top: var(--xanthia-margin-vertical);
+  margin-right: var(--xanthia-margin-horizontal);
+  margin-bottom: var(--xanthia-margin-vertical);
+  margin-left: var(--xanthia-margin-horizontal);
+  line-height: var(--xanthia-line-height);
+  border-radius: var(--xanthia-border-radius);
+  box-shadow: var(--xanthia-shadow);
+  z-index: 3;
+  animation: fadeinout var(--xanthia-time-visible) linear forwards;
 }
 
-/* These two percentages refer to which */
-/* percentage of the time on-screen that is */
-/* spent fading. */
-/* Fade will not apply if --xanthia-time-visible */
-/* is set to 'auto' */
+.albumart {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: var(--albumart-text-color);
+  font: var(--albumart-font-size) var(--albumart-font);
+  font-style: var(--albumart-font-style);
+  background-color: var(--albumart-background-color);
+  opacity: var(--albumart-opacity);
+  top: var(--albumart-alignment-top);
+  right: var(--albumart-alignment-right);
+  bottom: var(--albumart-alignment-bottom);
+  left: var(--albumart-alignment-left);
+  padding: 0px var(--albumart-text-padding);
+  margin-top: var(--albumart-margin-vertical);
+  margin-right: var(--albumart-margin-horizontal);
+  margin-bottom: var(--albumart-margin-vertical);
+  margin-left: var(--albumart-margin-horizontal);
+  line-height: var(--albumart-height);
+  border-radius: var(--albumart-border-radius);
+  box-shadow: var(--albumart-shadow);
+  z-index: 2;
+  animation: fadeinout var(--albumart-time-visible) linear forwards;
+}
 
-@keyframes cssAnimation {
-    0%,100% { opacity: 0; }
-	20%,80% { opacity: var(--xanthia-opacity); }
+.pic {
+  width: var(--albumart-size);
+  height: var(--albumart-size);
+  margin-top: var(--albumart-text-padding);
+  margin-bottom: var(--albumart-text-padding);
+  position: relative;
+  display: block;
+  background: url("/albumart/current.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+	4%,96% { opacity: 1; }
 }
