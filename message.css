@@ -1,42 +1,51 @@
 /* xanthia is a notification system for ubersicht */
-/* Written by Daniel Neemann */
+/* written by daniel neemann */
+
 :root {
-	/* Colors */
+	
+	/* colors */
 	--xanthia-background-color: var(--pecan-xanthia-bg, #DFDFDF);
 	--xanthia-text-color: var(--pecan-xanthia-fg, #090909);
 	--xanthia-opacity: var(--pecan-opacity-inner, 0.9);
 	--xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
-	/* Padding from edge of screen */
-	/* To position top/right/bottom/left see Alignment */
+
+	/* padding from edge of screen */
+	/* to position top/right/bottom/left see 'alignment' */
 	--xanthia-margin-vertical: var(--pecan-xanthia-vertical, 30px);
 	--xanthia-margin-horizontal: var(--pecan-xanthia-horizontal, 10px);
- 	/* Alignment */
-	/* Set 0 to where you want bar aligned */
+	
+ 	/* alignment */
+	/* set 0 to where you want bar aligned */
 	/* and "auto" where you don't */
 	--xanthia-alignment-top: var(--pecan-alignment-top, 0);
 	--xanthia-alignment-right: 0;
 	--xanthia-alignment-bottom: var(--pecan-alignment-bottom, auto);
 	--xanthia-alignment-left: auto;
+
 	/* size */
 	--xanthia-max-width: var(--pecan-xanthia-width, 300px);
 	--xanthia-max-height: calc(var(--xanthia-line-height) * 1);
 	--xanthia-min-width: none;
 	--xanthia-min-height: none;
-	/* Corner radius (for rounded corners) */--xanthia-border-radius: var(--pecan-xanthia-border-radius, 5px);
-	/* Typography */
+	
+	/* corner radius (for rounded corners) */
+	--xanthia-border-radius: var(--pecan-xanthia-border-radius, 5px);
+
+	/* typography */
 	--xanthia-font: var(--pecan-font, Lucida Grande);
 	--xanthia-font-size: var(--pecan-font-size, 12px);
 	--xanthia-font-style: var(--pecan-font-style, none);
 	--xanthia-text-padding: 3ch;
 	--xanthia-line-height: var(--pecan-xanthia-height, 29px);
-	/* Time spent on screen */
+
+	/* time spent on screen */
 	/* set to 'auto' for infinite */
 	/* cssanimation values at bottom of file */
 	/* reprent fade-in and fade-out time */
 	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
 }
 
-/* Get monitor width */
+/* get monitor width */
 .screen {
 	width: 100vw;
 	height: 100vh;
