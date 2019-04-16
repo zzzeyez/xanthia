@@ -47,10 +47,10 @@ help() {
 Usage: notify-send [option] [argument]
        [-i 'path/to/image'] [-m 'message']
        
-Example: notify-send -m "file saved"
-         notify-send -i "~/downloads/img.jpg" -m "img.jpg saved"
-	 notify-send -i "~/downloads/img.jpg"
-	 notify-send "upload finished""
+Example: notify-send -m \"file saved\"
+         notify-send -i \"~/downloads/img.jpg\" -m \"img.jpg saved\"
+	 notify-send -i \"~/downloads/img.jpg\"
+	 notify-send \"upload finished\""
 }
 
 flags() {
