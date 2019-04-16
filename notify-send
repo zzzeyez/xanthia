@@ -81,4 +81,7 @@ flags "$@"
 #########
 
 # support non-default uberischt directories
+
 # add image variables to `pecan`
+
+# if pecan's defining image variables then image should appear on left of screen
