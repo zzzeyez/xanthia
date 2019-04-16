@@ -34,7 +34,7 @@ notify() {
 		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-message-coffee"'
 	elif exists /usr/local/bin/terminal-notifier
 	then
-		terminal-notifier -message "$(cat "$message")" -appIcon "$image"
+		terminal-notifier -message "$(cat "$message")"
 	else
 		exit
 	fi
