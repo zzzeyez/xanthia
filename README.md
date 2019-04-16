@@ -53,5 +53,6 @@ Or take a screenshot and then display it as a notification:
 
 ```
 screencapture -i "~/downloads/image.png" && notify-send -i "~/downloads/image.png"
-``
+```
+
 The other use-case scenarios are up to you.  Another common use is displaying what song you are listening to in `ncmpcpp`.
