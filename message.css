@@ -3,45 +3,45 @@
 
 :root {
 	
-	/* colors */
+/* colors */
 	--xanthia-bg: var(--pecan-xanthia-bg, #DFDFDF);
 	--xanthia-fg: var(--pecan-xanthia-fg, #090909);
 	--xanthia-opacity: var(--pecan-xanthia-opacity, 0.9);
 	--xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
 
-	/* padding from edge of screen */
-	/* to position top/right/bottom/left see 'alignment' */
+/* padding from edge of screen */
+/* to position top/right/bottom/left see 'alignment' */
 	--xanthia-margin-vertical: var(--pecan-xanthia-margin-vertical, 30px);
 	--xanthia-margin-horizontal: var(--pecan-xanthia-margin-horizontal, 10px);
 	
- 	/* alignment */
-	/* set 0 to where you want bar aligned */
-	/* and "auto" where you don't */
+/* alignment */
+/* set 0 to where you want bar aligned */
+/* and "auto" where you don't */
 	--xanthia-alignment-top: var(--pecan-xanthia-alignment-top, 0);
 	--xanthia-alignment-right: var(--pecan-xanthia-alignment-right, 0);
 	--xanthia-alignment-bottom: var(--pecan-xanthia-alignment-bottom, auto);
 	--xanthia-alignment-left: var(--pecan-xanthia-alignment-left, auto);
 
-	/* size */
+/* size */
 	--xanthia-max-width: var(--pecan-xanthia-max-width, 300px);
 	--xanthia-max-height: var(--pecan-xanthia-max-height, 29px);
 	--xanthia-min-width: var(--pecan-xanthia-min-width, none);
 	--xanthia-min-height: var(--pecan-xanthia-min-height, none);
 	
-	/* corner radius (for rounded corners) */
+/* corner radius (for rounded corners) */
 	--xanthia-border-radius: var(--pecan-xanthia-border-radius, 8px);
 
-	/* typography */
+/* typography */
 	--xanthia-font: var(--pecan-xanthia-font, Lucida Grande);
 	--xanthia-font-size: var(--pecan-xanthia-font-size, 12px);
 	--xanthia-font-style: var(--pecan-xanthia-font-style, none);
 	--xanthia-line-height: var(--pecan-xanthia-line-height, 29px);
 	--xanthia-text-padding: var(--pecan-xanthia-text-padding, 0 3ch);	
 
-	/* time spent on screen */
-	/* set to 'auto' for infinite */
-	/* cssanimation values at bottom of file */
-	/* reprent fade-in and fade-out time */
+/* time spent on screen */
+/* set to 'auto' for infinite */
+/* cssanimation values at bottom of file */
+/* reprent fade-in and fade-out time */
 	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
 }
 
