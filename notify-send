@@ -73,3 +73,9 @@ else
 	setup
 	flags "$@"
 fi
+
+#########
+# TO DO #
+#########
+
+# support non-default uberischt directories
