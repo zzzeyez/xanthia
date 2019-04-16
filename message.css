@@ -33,7 +33,7 @@
 	/* set to 'auto' for infinite */
 	/* cssanimation values at bottom of file */
 	/* reprent fade-in and fade-out time */
-	--xanthia-time-visible: var(--pecan-xanthia-time-visible, 30s);
+	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
 }
 
 /* Get monitor width */
