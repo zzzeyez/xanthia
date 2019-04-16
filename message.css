@@ -35,8 +35,8 @@
 	--xanthia-font: var(--pecan-xanthia-font, Lucida Grande);
 	--xanthia-font-size: var(--pecan-xanthia-font-size, 12px);
 	--xanthia-font-style: var(--pecan-xanthia-font-style, none);
-	--xanthia-text-padding: var(--pecan-xanthia-text-padding, 0 3ch);
 	--xanthia-line-height: var(--pecan-xanthia-line-height, 29px);
+	--xanthia-text-padding: var(--pecan-xanthia-text-padding, 0 3ch);	
 
 	/* time spent on screen */
 	/* set to 'auto' for infinite */
