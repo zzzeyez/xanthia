@@ -31,7 +31,7 @@ notify() {
 	ps cax | grep sicht > /dev/null
 	if [ $? -eq 0 ]; then
 		osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
-		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-messagestyle-coffee"'
+		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-message-coffee"'
 	elif exists /usr/local/bin/terminal-notifier
 	then
 		terminal-notifier -message "$(cat "$message")" -appIcon "$image"
