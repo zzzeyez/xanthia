@@ -1,7 +1,7 @@
 # xanthia
-![Screenshot 1](/screenshots/1.gif)
-
 `xanthia` is a notification system for MacOS.  By default it is styled to match MacOS' default appearance.  If you have `pecan` installed then it will pull style from that instead.
+
+![Screenshot 1](/screenshots/1.gif)
 
 Here is without `pecan`:
 ![Screenshot_2](/screenshots/screenshot1.jpg)
