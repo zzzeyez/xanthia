@@ -25,7 +25,7 @@
 	/* idk what this is tbh*/
 	--xanthia-image-padding: var(--pecan-xanthia-image-padding, 0);
 	/* Fade */
-	--xanthia-image-time-visible: var(--pecan-xanthia-image-time-visible, 120s);
+	--xanthia-image-time-visible: var(--pecan-xanthia-image-time-visible, 15s);
 }
 
 /* Get monitor width */
