@@ -1,5 +1,5 @@
 /* xanthia is a notification system for ubersicht */
-/* Written by Daniel Neemann */
+/* written by daniel neemann (@zzzeyez) */
 
 :root {
 	/* image */
@@ -7,23 +7,29 @@
 	--xanthia-image-text-color: var(--pecan-xanthia-image-text-color, #dde0df);
 	--xanthia-image-opacity: var(--pecan-xanthia-image-opacity, 1);
 	--xanthia-image-shadow: var(--pecan-xanthia-image-shadow, 0px 4px 10px 4px rgba(0,0,0,0.2));
+	
 	/* Padding from edge of screen */
 	/* To position top/right/bottom/left see Alignment */
-	--xanthia-image-margin-vertical: var(--pecan-xanthia-image-margin-vertical, 51px);
-	--xanthia-image-margin-horizontal: var(--pecan-xanthia-image-margin-horizontal, 15px);
+	--xanthia-image-margin-vertical: var(--pecan-xanthia-image-margin-vertical, 30px);
+	--xanthia-image-margin-horizontal: var(--pecan-xanthia-image-margin-horizontal, 10px);
+
 	/* Alignment */
 	/* Set 0 to where you want bar aligned */
 	/* and "auto" where you don't */
 	--xanthia-image-alignment-top: var(--pecan-xanthia-image-alignment-top, 0);
-	--xanthia-image-alignment-right: var(--pecan-xanthia-image-alignment-top, 0);
+	--xanthia-image-alignment-right: var(--pecan-xanthia-image-alignment-right, auto);
 	--xanthia-image-alignment-bottom: var(--pecan-xanthia-image-alignment-bottom, auto);
-	--xanthia-image-alignment-left: var(--pecan-xanthia-image-alignment-left, auto);
+	--xanthia-image-alignment-left: var(--pecan-xanthia-image-alignment-left, 0);
+
 	/* Bar's total height including --border and excluding padding */
 	--xanthia-image-size: var(--pecan-xanthia-image-size, 150px);
+
 	/* Corner radius (for rounded corners) */
 	--xanthia-image-border-radius: var(--pecan-xanthia-image-border-radius, 8px);
+
 	/* idk what this is tbh*/
 	--xanthia-image-padding: var(--pecan-xanthia-image-padding, 0);
+
 	/* Fade */
 	--xanthia-image-time-visible: var(--pecan-xanthia-image-time-visible, 15s);
 }
