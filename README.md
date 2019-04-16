@@ -34,7 +34,7 @@ Usage: notify-send [option] [argument]
 Example: notify-send -m "file saved"
          notify-send -i "~/downloads/img.jpg" -m "img.jpg saved"
          notify-send -i "~/downloads/img.jpg"
-	        notify-send "upload finished"
+         notify-send "upload finished"
  ```
 
 So, for example, you can enter this into `weechat` for notifications:
