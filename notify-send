@@ -40,6 +40,18 @@ notify() {
 	fi
 }
 
+help() {
+	printf "%s" \
+"xanthia: a notification system for macOS
+
+Usage: notify-send [option] [argument]
+       [-i 'path/to/image'] [-m 'message']
+       
+Example: notify-send -m "file saved"
+         notify-send -i "~/downloads/img.jpg" -m "img.jpg saved"
+	 notify-send "upload finished"
+}
+
 flags() {
 	while getopts m:i: opt; do
 		case $opt in
@@ -47,14 +59,16 @@ flags() {
 		;;
 		i) icon "$OPTARG"
 		;;
+		*) help
+		;;
 	esac
 	done
 }
 
-if [ "$#" -gt 1 ]; then
-	setup
-	flags "$@"
+if [ "$1" != "-*" ] && [ "$1" ] ;
+then
+	notify "$1"
 else
 	setup
-	notify "$@"
+	flags "$@"
 fi
