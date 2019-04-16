@@ -63,7 +63,7 @@
 	margin-bottom: var(--xanthia-image-padding);
 	position: relative;
 	display: block;
-	background: url("/xanthia/image.png");
+	background: url("/xanthia/.cache/image.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;

@@ -1,4 +1,4 @@
-command: "cat xanthia/message"
+command: "cat xanthia/.cache/message"
 
 refreshFrequency: false
 

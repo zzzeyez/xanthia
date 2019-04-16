@@ -6,8 +6,8 @@
 # requires `ubersicht` and `imagemagick`
 
 uber="${HOME}/Library/Application Support/Übersicht/widgets/"
-image="$uber/xanthia/image.png"
-message="$uber/xanthia/message"
+image="$uber/xanthia/.cache/image.png"
+message="$uber/xanthia/.cache/message"
 
 exists() {
     type "$1" &> /dev/null ;
@@ -54,29 +54,30 @@ Example: notify-send -m \"file saved\"
 }
 
 flags() {
-	while getopts m:i: opt; do
-		case $opt in
-		m) notify "$OPTARG"
-		;;
-		i) icon "$OPTARG"
-		;;
-		*) help
-		;;
-	esac
+	while getopts m:i: opt
+		do
+			case $opt in
+			m) notify "$OPTARG"
+			;;
+			i) icon "$OPTARG"
+			;;
+			*) help
+			;;
+		esac
 	done
+	# if no flags are provided do `new-roses [searchterm] [bgcolor]`
+	shift "$((OPTIND-1))" 
+	if [ "$1" != "-*" ] && [ "$1" ] ;
+	then
+		notify "$1"
+	fi
 }
 
-if [ "$1" != "-*" ] && [ "$1" ] ;
-then
-	notify "$1"
-else
-	setup
-	flags "$@"
-fi
+setup
+flags "$@"
 
 #########
 # TO DO #
 #########
 
 # support non-default uberischt directories
-# place cache in sub directory
