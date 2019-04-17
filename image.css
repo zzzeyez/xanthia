@@ -13,9 +13,7 @@
 	--xanthia-image-padding-v: 30px;
 	--xanthia-image-padding-h: 10px;
 
-/* alignment */
-/* set 0 to where you want bar aligned */
-/* and "auto" where you don't */
+/* alignment (use "0" or "auto") */
 	--xanthia-image-alignment-top: 0;
 	--xanthia-image-alignment-right: auto;
 	--xanthia-image-alignment-bottom: auto;
@@ -38,25 +36,28 @@
 }
 
 .xanthiaimagecontainer {
+/* body */
 	display: block;
 	position: absolute;
 	overflow: hidden;
+	/* line-height: var(--pecan-xanthia-image-size, var(--xanthia-image-size)); */
 	background-color: var(--pecan-xanthia-image-bg, var(--xanthia-image-bg));
-	/* opacity: var(--pecan-xanthia-image-opacity, var(--xanthia-image-opacity)); */
+/* alignment */
 	top: var(--pecan-xanthia-image-alignment-top, var(--xanthia-image-alignment-top));
 	right: var(--pecan-xanthia-image-alignment-right, var(--xanthia-image-alignment-right));
 	bottom: var(--pecan-xanthia-image-alignment-bottom, var(--xanthia-image-alignment-bottom));
 	left: var(--pecan-xanthia-image-alignment-left, var(--xanthia-image-alignment-left));
-	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
-	/**/
+/* padding */
 	margin-top: var(--pecan-xanthia-image-padding-v, var(--xanthia-image-padding-v));
 	margin-right: var(--pecan-xanthia-image-padding-h, var(--xanthia-image-padding-h));
 	margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-image-padding-v));
 	margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-image-padding-h));
-	/**/
-	line-height: var(--xanthia-image-height);
+/* border */
+	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
 	border-radius: var(--pecan-xanthia-image-border-radius, var(--xanthia-image-border-radius));
+/* shadow */
 	box-shadow: var(--pecan-xanthia-image-shadow, var(--xanthia-image-shadow));
+/* fade and order */
 	z-index: 2;
 	animation: fadeinout var(--pecan-xanthia-image-time-visible, var(--xanthia-image-time-visible)) linear forwards;
 }
@@ -67,6 +68,7 @@
 	margin: var(--pecan-xanthia-image-padding, var(--xanthia-image-padding));
 	position: relative;
 	display: block;
+/* css only supports relative urls */
 	background: url("/xanthia/.cache/image.png");
 	background-size: cover;
 	background-repeat: no-repeat;
