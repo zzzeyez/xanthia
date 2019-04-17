@@ -59,7 +59,7 @@
 	font: var(--pecan-xanthia-font-size, var(--xanthia-font-size)) var(--pecan-xanthia-font, var(--xanthia-font));
 	font-style: var(--pecan-xanthia-font-style, var(--xanthia-font-style));
 	background-color:  var(--pecan-xanthia-bg, var(--xanthia-bg));
-	opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity));
+	/* opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity)); */
 	top: var(--pecan-xanthia-alignment-top, var(--xanthia-alignment-top));
 	right: var(--pecan-xanthia-alignment-right, var(--xanthia-alignment-right));
 	bottom: var(--pecan-xanthia-alignment-bottom, var(--xanthia-alignment-bottom));
@@ -84,5 +84,5 @@
 
 @keyframes fadeinout {
 	0%,100% { opacity: 0; }
-	4%,96% { opacity: 1; }
+	1%,99% { opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity)); }
 }
