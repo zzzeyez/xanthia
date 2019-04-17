@@ -4,16 +4,13 @@
 A notification system for MacOS.
 
 ## Installation
-Dependencies: [Übersicht](http://tracesof.net/uebersicht/)
-
-Clone this repo to the location of your Übersicht widgets:
+Install [Übersicht](http://tracesof.net/uebersicht/) and then place this repository in your Übersicht directory:
 ```
 git clone https://github.com/zzzeyez/Xanthia.git "$HOME/Library/Application Support/Übersicht/widgets/xanthia"
 ```
 
 ## Usage
-To trigger the notifications, use the included `notify-send`.
-
+To trigger the notifications, use the included `notify-send`:
 ```
 xanthia: a notification system for macOS
 
@@ -27,19 +24,16 @@ Example: notify-send -m "file saved"
  ```
 
 So, for example, you can enter this into `weechat` for notifications:
-
 ```
 /set trigger.trigger.beep.command /exec -norc notify-send "${tg_tag_nick}: ${tg_message_nocolor}"
 ```
 
 Or place this in your `ncmpcpp` config for song-change notifications:
-
 ```
 execute_on_song_change = "notify-send "♫ $(mpc current)""
 ```
 
 Or take a screenshot and then display it as a notification:
-
 ```
 screencapture -i "~/downloads/image.png" && notify-send -i "~/downloads/image.png"
 ```
