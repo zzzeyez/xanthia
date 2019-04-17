@@ -25,7 +25,7 @@
 	--xanthia-image-border-radius: 8px;
 
 /* border */
-	--xanthia-image-padding: 0;
+	--xanthia-image-border: 0;
 
 /* fade */
 	--xanthia-image-time-visible: 15s;
@@ -47,7 +47,7 @@
 	right: var(--pecan-xanthia-image-alignment-right, var(--xanthia-image-alignment-right));
 	bottom: var(--pecan-xanthia-image-alignment-bottom, var(--xanthia-image-alignment-bottom));
 	left: var(--pecan-xanthia-image-alignment-left, var(--xanthia-image-alignment-left));
-	padding: var(--xanthia-image-padding);
+	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
 	margin-top: var(--pecan-xanthia-image-margin-vertical, var(--xanthia-image-margin-vertical));
 	margin-right: var(--pecan-xanthia-image-margin-horizontal, var(--xanthia-image-margin-horizontal));
 	margin-bottom: var(--pecan-xanthia-image-margin-vertical, var(--xanthia-image-margin-vertical));
