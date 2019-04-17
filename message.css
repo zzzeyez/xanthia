@@ -2,34 +2,12 @@
 /* written by daniel neemann */
 
 :root {
-	
-/* colors */
-	--xanthia-bg: #fafafa;
-	--xanthia-fg: #090909;
-	--xanthia-opacity: 0.9;
-	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.04);
-
-/* padding from edge of screen */
-/* to position top/right/bottom/left see 'alignment' */
-	--xanthia-padding-v: 30px;
-	--xanthia-padding-h: 10px;
-	
-/* alignment */
-/* set 0 to where you want bar aligned */
-/* and "auto" where you don't */
-	--xanthia-alignment-top: 0;
-	--xanthia-alignment-right: 0;
-	--xanthia-alignment-bottom: auto;
-	--xanthia-alignment-left: auto;
 
 /* size */
 	--xanthia-max-width: none;
 	--xanthia-max-height: 29px;
 	--xanthia-min-width: none;
 	--xanthia-min-height: none;
-	
-/* corner radius (for rounded corners) */
-	--xanthia-border-radius: 8px;
 
 /* typography */
 	--xanthia-font: Lucida Grande;
@@ -37,11 +15,27 @@
 	--xanthia-font-style: none;
 	--xanthia-line-height: 29px;
 	--xanthia-text-padding: 3ch;	
+		
+/* colors */
+	--xanthia-bg: #fafafa;
+	--xanthia-fg: #090909;
+	--xanthia-opacity: 0.9;
+	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.04);
 
-/* time spent on screen */
-/* set to 'auto' for infinite */
-/* cssanimation values at bottom of file */
-/* reprent fade-in and fade-out time */
+/* alignment (use "0" or "auto") */
+	--xanthia-alignment-top: 0;
+	--xanthia-alignment-right: 0;
+	--xanthia-alignment-bottom: auto;
+	--xanthia-alignment-left: auto;
+	
+/* padding */
+	--xanthia-padding-v: 30px;
+	--xanthia-padding-h: 10px;
+
+/* corner radius (for rounded corners) */
+	--xanthia-border-radius: 8px;
+
+/* fade */
 	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
 }
 
@@ -52,32 +46,34 @@
 }
 
 .xanthiamessage {
-	display: block;
-	position: absolute;
-	overflow: hidden;
-	color: var(--pecan-xanthia-fg, var(--xanthia-fg));
-	font: var(--pecan-xanthia-font-size, var(--xanthia-font-size)) var(--pecan-xanthia-font, var(--xanthia-font));
-	font-style: var(--pecan-xanthia-font-style, var(--xanthia-font-style));
+/* body */
 	background-color:  var(--pecan-xanthia-bg, var(--xanthia-bg));
 	/* opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity)); */
-	top: var(--pecan-xanthia-alignment-top, var(--xanthia-alignment-top));
-	right: var(--pecan-xanthia-alignment-right, var(--xanthia-alignment-right));
-	bottom: var(--pecan-xanthia-alignment-bottom, var(--xanthia-alignment-bottom));
-	left: var(--pecan-xanthia-alignment-left, var(--xanthia-alignment-left));
-	padding: 0 var(--pecan-xanthia-text-padding, var(--xanthia-text-padding));
-	overflow: hidden;
-	text-overflow: ellipsis;
-	/**/
 	min-width: var(--pecan-xanthia-min-width, var(--xanthia-min-width));
 	min-height: var(--pecan-xanthia-min-height, var(--xanthia-min-height));
 	max-width: var(--pecan-xanthia-max-width, var(--xanthia-max-width));
 	max-height: var(--pecan-xanthia-max-height, var(--xanthia-max-height));
-	/**/
+	display: block;
+	position: absolute;
+	overflow: hidden;
+/* typography */
+	color: var(--pecan-xanthia-fg, var(--xanthia-fg));
+	font: var(--pecan-xanthia-font-size, var(--xanthia-font-size)) var(--pecan-xanthia-font, var(--xanthia-font));
+	font-style: var(--pecan-xanthia-font-style, var(--xanthia-font-style));
+	line-height: var(--pecan-xanthia-line-height, var(--xanthia-line-height));
+	text-overflow: ellipsis;
+/* padding */
+	padding: 0 var(--pecan-xanthia-text-padding, var(--xanthia-text-padding));
 	margin-top: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
 	margin-right: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
 	margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
 	margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
-	line-height: var(--pecan-xanthia-line-height, var(--xanthia-line-height));
+/* alignment */
+	top: var(--pecan-xanthia-alignment-top, var(--xanthia-alignment-top));
+	right: var(--pecan-xanthia-alignment-right, var(--xanthia-alignment-right));
+	bottom: var(--pecan-xanthia-alignment-bottom, var(--xanthia-alignment-bottom));
+	left: var(--pecan-xanthia-alignment-left, var(--xanthia-alignment-left));
+/* etc */
 	border-radius: var(--pecan-xanthia-border-radius, var(--xanthia-border-radius));
 	box-shadow: var(--pecan-xanthia-shadow, var(--xanthia-shadow));
 	z-index: 2;
