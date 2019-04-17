@@ -13,10 +13,6 @@ exists() {
     type "$1" &> /dev/null ;
 }
 
-setup() {
-	touch "$message"
-}
-
 icon() {
 	convert "$1" "$image" &&
 	ps cax | grep sicht > /dev/null
@@ -73,7 +69,6 @@ flags() {
 	fi
 }
 
-setup
 flags "$@"
 
 #########
