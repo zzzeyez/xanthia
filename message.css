@@ -11,8 +11,8 @@
 
 /* padding from edge of screen */
 /* to position top/right/bottom/left see 'alignment' */
-	--xanthia-margin-vertical: 30px;
-	--xanthia-margin-horizontal: 10px;
+	--xanthia-padding-v: 30px;
+	--xanthia-padding-h: 10px;
 	
 /* alignment */
 /* set 0 to where you want bar aligned */
@@ -67,14 +67,16 @@
 	padding: 0 var(--pecan-xanthia-text-padding, var(--xanthia-text-padding));
 	overflow: hidden;
 	text-overflow: ellipsis;
+	/**/
 	min-width: var(--pecan-xanthia-min-width, var(--xanthia-min-width));
 	min-height: var(--pecan-xanthia-min-height, var(--xanthia-min-height));
 	max-width: var(--pecan-xanthia-max-width, var(--xanthia-max-width));
 	max-height: var(--pecan-xanthia-max-height, var(--xanthia-max-height));
-	margin-top: var(--pecan-xanthia-margin-vertical, var(--xanthia-margin-vertical));
-	margin-right: var(--pecan-xanthia-margin-horizontal, var(--xanthia-margin-horizontal));
-	margin-bottom: var(--pecan-xanthia-margin-vertical, var(--xanthia-margin-vertical));
-	margin-left: var(--pecan-xanthia-margin-horizontal, var(--xanthia-margin-horizontal));
+	/**/
+	margin-top: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
+	margin-right: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
+	margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
+	margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
 	line-height: var(--pecan-xanthia-line-height, var(--xanthia-line-height));
 	border-radius: var(--pecan-xanthia-border-radius, var(--xanthia-border-radius));
 	box-shadow: var(--pecan-xanthia-shadow, var(--xanthia-shadow));
