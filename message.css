@@ -4,7 +4,7 @@
 :root {
 	
 /* colors */
-	--xanthia-bg: var(--pecan-xanthia-bg, #DFDFDF);
+	--xanthia-bg: var(--pecan-xanthia-bg, #f0000000);
 	--xanthia-fg: var(--pecan-xanthia-fg, #090909);
 	--xanthia-opacity: var(--pecan-xanthia-opacity, 0.9);
 	--xanthia-shadow: var(--pecan-xanthia-shadow, 0px 4px 10px 4px rgba(0,0,0,0.04));
@@ -36,7 +36,7 @@
 	--xanthia-font-size: var(--pecan-xanthia-font-size, 12px);
 	--xanthia-font-style: var(--pecan-xanthia-font-style, none);
 	--xanthia-line-height: var(--pecan-xanthia-line-height, 29px);
-	--xanthia-text-padding: var(--pecan-xanthia-text-padding, 0 3ch);	
+	--xanthia-text-padding: var(--pecan-xanthia-text-padding, 3ch);	
 
 /* time spent on screen */
 /* set to 'auto' for infinite */
