@@ -30,7 +30,7 @@ notify() {
 		head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-message-coffee"'
 	elif exists /usr/local/bin/terminal-notifier
 	then
-		terminal-notifier -message "$(cat "$message")"
+		terminal-notifier -message "$(head -1 "$message")"
 	else
 		exit
 	fi
@@ -76,13 +76,3 @@ flags "$@"
 #########
 
 # support non-default uberischt directories
-
-# add image variables to `pecan`
-
-# if pecan's defining image variables then image should appear on left of screen
-
-# maybe i can nest the variables inside other variables like:
-# .xanthiamessage {
-#	color: var(--xanthia-text-color, var(--pecan-xanthia-text-color));
-# }
-# because otherwise the top of .css files are too tedious
