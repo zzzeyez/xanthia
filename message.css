@@ -64,7 +64,7 @@
 	right: var(--xanthia-alignment-right);
 	bottom: var(--xanthia-alignment-bottom);
 	left: var(--xanthia-alignment-left);
-	padding: var(--xanthia-text-padding);
+	padding: 0 var(--xanthia-text-padding);
 	overflow: hidden;
 	text-overflow: ellipsis;
 	min-width: var(--xanthia-min-width);
