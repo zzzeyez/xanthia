@@ -10,8 +10,8 @@
 	--xanthia-image-size: 150px;
 	
 /* padding from edge of screen */
-	--xanthia-image-margin-vertical: 30px;
-	--xanthia-image-margin-horizontal: 10px;
+	--xanthia-image-padding-v: 30px;
+	--xanthia-image-padding-h: 10px;
 
 /* alignment */
 /* set 0 to where you want bar aligned */
@@ -48,10 +48,12 @@
 	bottom: var(--pecan-xanthia-image-alignment-bottom, var(--xanthia-image-alignment-bottom));
 	left: var(--pecan-xanthia-image-alignment-left, var(--xanthia-image-alignment-left));
 	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
-	margin-top: var(--pecan-xanthia-image-margin-vertical, var(--xanthia-image-margin-vertical));
-	margin-right: var(--pecan-xanthia-image-margin-horizontal, var(--xanthia-image-margin-horizontal));
-	margin-bottom: var(--pecan-xanthia-image-margin-vertical, var(--xanthia-image-margin-vertical));
-	margin-left: var(--pecan-xanthia-image-margin-horizontal, var(--xanthia-image-margin-horizontal));
+	/**/
+	margin-top: var(--pecan-xanthia-image-padding-v, var(--xanthia-image-padding-v));
+	margin-right: var(--pecan-xanthia-image-padding-h, var(--xanthia-image-padding-h));
+	margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-image-padding-v));
+	margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-image-padding-h));
+	/**/
 	line-height: var(--xanthia-image-height);
 	border-radius: var(--pecan-xanthia-image-border-radius, var(--xanthia-image-border-radius));
 	box-shadow: var(--pecan-xanthia-image-shadow, var(--xanthia-image-shadow));
