@@ -22,7 +22,10 @@ icon() {
 	fi
 	ps cax | grep sicht > /dev/null
 	if [ $? -eq 0 ]; then
-	osascript -e 'tell application "Übersicht" to refresh widget id "xanthia-image-coffee"'
+		# stupid umlaut character
+		# osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
+		# head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-image-coffee"'
+		osascript -e 'tell application "Übersicht" to refresh widget id "xanthia-image-coffee"'
 	fi
 }
 
@@ -30,6 +33,9 @@ notify() {
 	echo "$1" > "$message" &&
 	ps cax | grep sicht > /dev/null
 	if [ $? -eq 0 ]; then
+		# stupid umlaut character
+		# osascript -e 'tell application "'$(ps ax | grep sicht | awk '{print $5}' | \
+		# head -1 | cut -d/ -f3 | cut -d. -f1)'" to refresh widget id "xanthia-message-coffee"'
 		osascript -e 'tell application "Übersicht" to refresh widget id "xanthia-message-coffee"'
 	elif exists /usr/local/bin/terminal-notifier
 	then
