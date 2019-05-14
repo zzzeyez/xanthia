@@ -50,15 +50,15 @@
 /* padding */
 	margin-top: var(--pecan-xanthia-image-padding-v, var(--xanthia-image-padding-v));
 	margin-right: var(--pecan-xanthia-image-padding-h, var(--xanthia-image-padding-h));
-	margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-image-padding-v));
-	margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-image-padding-h));
+	margin-bottom: var(--pecan-xanthia-image-padding-v, var(--xanthia-image-padding-v));
+	margin-left: var(--pecan-xanthia-image-padding-h, var(--xanthia-image-padding-h));
 /* border */
 	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
 	border-radius: var(--pecan-xanthia-image-border-radius, var(--xanthia-image-border-radius));
 /* shadow */
 	box-shadow: var(--pecan-xanthia-image-shadow, var(--xanthia-image-shadow));
 /* fade and order */
-	z-index: 2;
+	z-index: 3;
 	animation: fadeinout var(--pecan-xanthia-image-time-visible, var(--xanthia-image-time-visible)) linear forwards;
 }
 
