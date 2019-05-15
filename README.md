@@ -45,3 +45,7 @@ brew install imagemagick
 ```
 
 If `pecan` is installed, then `xanthia` will pull it's style from `pecan`'s `style.css` file.
+
+## Notes
+
+`notify-send` uses a "Ü" character and this causes issues on some computers.  If `notify-send` does not restart `Übersicht` then try uncommenting line #26, and commenting line #27 on `notify-send`
