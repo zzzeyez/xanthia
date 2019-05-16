@@ -14,9 +14,12 @@ setup() {
 		SOURCE="$(readlink "$SOURCE")"
 		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 	done
-	uber="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-	image="$uber/.cache/image.png"
-	message="$uber/.cache/message"
+	uber="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.cache"
+	image="$uber/image.png"
+	message="$uber/message"
+	if [[ ! -d "$uber" ]] ; then
+		mkdir "$uber"
+	fi
 }
 
 exists() {
