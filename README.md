@@ -6,7 +6,7 @@ A notification system for MacOS.
 ## Installation
 Install [Übersicht](http://tracesof.net/uebersicht/) and then place this repository in your Übersicht directory:
 ```
-git clone https://github.com/zzzeyez/Xanthia.git "$HOME/Library/Application Support/Übersicht/widgets/xanthia"
+git clone https://github.com/zzzeyez/xanthia.git "$HOME/Library/Application Support/Übersicht/widgets/xanthia"
 ```
 
 ## Usage
