@@ -20,7 +20,7 @@
 	--xanthia-image-alignment-left: 0;
 
 /* corner radius (for rounded corners) */
-	--xanthia-image-border-radius-left: 8px
+	--xanthia-image-border-radius-left: 8px;
 	--xanthia-image-border-radius-right: 8px;
 
 /* border */
@@ -55,7 +55,7 @@
 	margin-left: var(--pecan-xanthia-image-padding-h, var(--xanthia-image-padding-h));
 /* border */
 	padding: var(--pecan-xanthia-image-border, var(--xanthia-image-border));
-	border-top-left-radius: var(--pecan-xanthia-image-border-radius-left, 10px);
+	border-top-left-radius: var(--pecan-xanthia-image-border-radius-left, var(--xanthia-image-border-radius-left));
 	border-top-right-radius: var(--pecan-xanthia-image-border-radius-right, var(--xanthia-image-border-radius-right));
 	border-bottom-right-radius: var(--pecan-xanthia-image-border-radius-right, var(--xanthia-image-border-radius-right));
 	border-bottom-left-radius: var(--pecan-xanthia-image-border-radius-left, var(--xanthia-image-border-radius-left));
