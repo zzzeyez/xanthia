@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
-if [[ -f xanthia/.cache/message ]] ; then
-	head -1 xanthia/.cache/message
+
+cache="xanthia/.cache"
+defaults="xanthia/.defaults"
+
+if [[ -d "$cache" ]] ; then
+	head -1 "$cache/message"
 else
-	echo "xanthia running..  run notify-send"
+	mkdir "$cache" &&
+	cp "$defaults/image.png" "$cache/image.png"
+	cp "$defaults/message" "$cache/message"
+	sleep 1s &&
+	head -1 "$cache/message"
+	ubersicht="$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)"
+	if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
+		ubersicht="Übersicht"
+	fi		
+	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-image-coffee"'
 fi

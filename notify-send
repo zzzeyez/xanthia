@@ -13,6 +13,7 @@ setup() {
 		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 	done
 	uber="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.cache"
+	defaults="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )/.defaults"
 	image="$uber/image.png"
 	message="$uber/message"
 	if [[ ! -d "$uber" ]] ; then
@@ -37,7 +38,7 @@ exists() {
 
 icon() {
 	path="$1"
-	if test -e $path -a $(file -b --mime-type $path) = "image/png"; then
+	if test -e "$path" -a "$(file -b --mime-type $path)" = "image/png"; then
 		cp "$path" "$image"
 	else
 		convert "$path" "$image"
@@ -53,10 +54,10 @@ notify() {
 clean() {
 	sleep 1s &&
 	if [[ -f "$image" ]] ; then
-		rm "$image"
+		cp "$defaults/image.png" "$image"
 	fi
 	if [[ -f "$message" ]] ; then
-		rm "$message"
+		cp "$defaults/message" "$message"
 	fi
 }
 
