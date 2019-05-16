@@ -33,11 +33,11 @@
 	--xanthia-padding-h: 10px;
 
 /* corner radius (for rounded corners) */
-	--xanthia-border-radius-left: 8px;
-	--xanthia-border-radius-right: 8px;
+	--xanthia-border-radius-left: 3px;
+	--xanthia-border-radius-right: 3px;
 
 /* fade */
-	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
+	--xanthia-time-visible: 60s;
 }
 
 /* get monitor width */
@@ -82,7 +82,7 @@
 	border-bottom-left-radius: var(--pecan-xanthia-border-radius-left, var(--xanthia-border-radius-left));
 	box-shadow: var(--pecan-xanthia-shadow, var(--xanthia-shadow));
 	z-index: 2;
-	animation: fadeinout var(--xanthia-time-visible) linear forwards;
+	animation: fadeinout var(--pecan-xanthia-time-visible, var(--xanthia-time-visible)) linear forwards;
 }
 
 @keyframes fadeinout {
