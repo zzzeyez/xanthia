@@ -33,7 +33,8 @@
 	--xanthia-padding-h: 10px;
 
 /* corner radius (for rounded corners) */
-	--xanthia-border-radius: 8px;
+	--xanthia-border-radius-left: 8px;
+	--xanthia-border-radius-right: 8px;
 
 /* fade */
 	--xanthia-time-visible: var(--pecan-xanthia-time-visible, auto);
@@ -75,6 +76,10 @@
 	left: var(--pecan-xanthia-alignment-left, var(--xanthia-alignment-left));
 /* etc */
 	border-radius: var(--pecan-xanthia-border-radius, var(--xanthia-border-radius));
+	border-top-left-radius: var(--pecan-xanthia-border-radius-left, var(--xanthia-border-radius-left));
+	border-top-right-radius: var(--pecan-xanthia-border-radius-right, var(--xanthia-border-radius-right));
+	border-bottom-right-radius: var(--pecan-xanthia-border-radius-right, var(--xanthia-border-radius-right));
+	border-bottom-left-radius: var(--pecan-xanthia-border-radius-left, var(--xanthia-border-radius-left));
 	box-shadow: var(--pecan-xanthia-shadow, var(--xanthia-shadow));
 	z-index: 2;
 	animation: fadeinout var(--xanthia-time-visible) linear forwards;

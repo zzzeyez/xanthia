@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+if [[ -f xanthia/.cache/message ]] ; then
+	head -1 xanthia/.cache/message
+else
+	echo "xanthia running..  run notify-send"
+fi

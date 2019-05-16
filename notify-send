@@ -5,9 +5,19 @@
 # displays notifications on macos
 # requires `ubersicht` and `imagemagick`
 
-uber="${HOME}/Library/Application Support/Übersicht/widgets/"
-image="$uber/xanthia/.cache/image.png"
-message="$uber/xanthia/.cache/message"
+#uber="${HOME}/Library/Application Support/Übersicht/widgets/"
+
+setup() {
+	SOURCE="${BASH_SOURCE[0]}"
+	while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+		DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+		SOURCE="$(readlink "$SOURCE")"
+		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+	done
+	uber="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
+	image="$uber/.cache/image.png"
+	message="$uber/.cache/message"
+}
 
 exists() {
     type "$1" &> /dev/null ;
@@ -44,6 +54,16 @@ notify() {
 	fi
 }
 
+clean() {
+	sleep 1s &&
+	if [[ -f "$image" ]] ; then
+		rm "$image"
+	fi
+	if [[ -f "$message" ]] ; then
+		rm "$message"
+	fi
+}
+
 help() {
 	printf "%s" \
 "xanthia: a notification system for macOS
@@ -65,7 +85,7 @@ flags() {
 			;;
 			i) icon "$OPTARG"
 			;;
-			*) help
+			*) help && exit
 			;;
 		esac
 	done
@@ -77,7 +97,9 @@ flags() {
 	fi
 }
 
+setup
 flags "$@"
+clean 
 
 #########
 # TO DO #

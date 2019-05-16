@@ -1,4 +1,4 @@
-command: "head -1 xanthia/.cache/message"
+command: "bash xanthia/scripts/message"
 
 refreshFrequency: false
 
