@@ -17,7 +17,6 @@ setup() {
 	defaults="$dir/.defaults"
 	image="$cache/image.png"
 	message="$cache/message"
-	echo "$cache $defaults $image $message"
 	if [[ ! -d "$cache" ]] ; then
 		mkdir "$cache"
 	fi
@@ -100,7 +99,7 @@ flags() {
 
 setup
 flags "$@"
-clean 
+#clean 
 
 #########
 # TO DO #
