@@ -13,10 +13,11 @@ setup() {
 		[[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 	done
 	dir="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
-	cache="$dir/cache"
+	cache="$dir/.cache"
 	defaults="$dir/.defaults"
 	image="$cache/image.png"
 	message="$cache/message"
+	echo "$cache $defaults $image $message"
 	if [[ ! -d "$cache" ]] ; then
 		mkdir "$cache"
 	fi
@@ -25,7 +26,7 @@ setup() {
 	if [ $? -eq 0 ]; then
 		# stupid umlaut character
 		ubersicht="$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)"
-		if [[ "$cachesicht" = "UM-LM^Hbersicht" ]] ; then
+		if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
 			ubersicht="Übersicht"
 		fi		
 	else
