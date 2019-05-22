@@ -10,7 +10,7 @@
 	--xanthia-image-size: 150px;
 	
 /* padding from edge of screen */
-	--xanthia-image-padding-v: 30px;
+	--xanthia-image-padding-v: 10px;
 	--xanthia-image-padding-h: 10px;
 
 /* alignment (use "0" or "auto") */
