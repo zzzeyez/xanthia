@@ -55,6 +55,7 @@
 	max-width: var(--pecan-xanthia-max-width, var(--xanthia-max-width));
 	max-height: var(--pecan-xanthia-max-height, var(--xanthia-max-height));
 	display: block;
+	white-space: nowrap;
 	position: absolute;
 	overflow: hidden;
 /* typography */
