@@ -43,7 +43,7 @@ icon() {
 		cp "$path" "$image"
 	else
 		convert "$path" "$image"
-	fi
+	fi &&
 	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-image-coffee"'
 }
 

@@ -10,7 +10,7 @@
 	--xanthia-min-height: none;
 
 /* typography */
-	--xanthia-font: Lucida Grande;
+	--xanthia-font: SF Mono, Lucida Grande;
 	--xanthia-font-size: 12px;
 	--xanthia-font-style: none;
 	--xanthia-line-height: 29px;
@@ -19,7 +19,7 @@
 /* colors */
 	--xanthia-bg: #fafafa;
 	--xanthia-fg: #090909;
-	--xanthia-opacity: 0.9;
+	--xanthia-opacity: 1;
 	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.04);
 
 /* alignment (use "0" or "auto") */
@@ -49,7 +49,7 @@
 .xanthiamessage {
 /* body */
 	background-color:  var(--pecan-xanthia-bg, var(--xanthia-bg));
-	/* opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity)); */
+	opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity));
 	min-width: var(--pecan-xanthia-min-width, var(--xanthia-min-width));
 	min-height: var(--pecan-xanthia-min-height, var(--xanthia-min-height));
 	max-width: var(--pecan-xanthia-max-width, var(--xanthia-max-width));
