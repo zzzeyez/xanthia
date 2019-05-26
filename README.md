@@ -9,7 +9,7 @@ A notification system for MacOS.
 + Install `notify-send` by typing this into a terminal:
 
 ```
-ln -s "${HOME}Library/Application Support/Übersicht/widgets/xanthia/notify-send" "/usr/local/bin/notify-send"
+ln -s "${HOME}/Library/Application Support/Übersicht/widgets/xanthia/notify-send" "/usr/local/bin/notify-send"
 ```
 
 
