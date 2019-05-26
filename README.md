@@ -1,8 +1,7 @@
 # xanthia
-A notification system for MacOS.
 ![Screenshot_2](/screenshots/screenshot1.jpg)
 
-
+A notification system for MacOS.
 
 ## Installation
 + Install [Übersicht](http://tracesof.net/uebersicht/)
