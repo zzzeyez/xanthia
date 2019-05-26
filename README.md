@@ -4,14 +4,15 @@
 A notification system for MacOS.
 
 ## Installation
-Install [Übersicht](http://tracesof.net/uebersicht/) and then place this repository in your Übersicht directory:
++ Install [Übersicht](http://tracesof.net/uebersicht/)
++ Place this folder in `~/Library/Application Support/Übersicht/widgets`
++ Install `notify-send` by typing this into a terminal:
+
 ```
-git clone https://github.com/zzzeyez/xanthia.git "$HOME/Library/Application Support/Übersicht/widgets/xanthia"
+ln -s "${HOME}Library/Application Support/Übersicht/widgets/xanthia/notify-send" "/usr/local/bin/notify-send"
 ```
 
 ## Usage
-To trigger the notifications, use the included `notify-send`:
-```
 xanthia: a notification system for macOS
 
 Usage: notify-send [option] [argument]
@@ -39,13 +40,9 @@ screencapture -i "~/downloads/image.png" && notify-send -i "~/downloads/image.pn
 ```
 
 ## Optional Features
-Images can be displayed with the `notify-send` -i flag.  This requires the installation of `imagemagick`:
+Images can be displayed with the `notify-send` -i flag.  By default this will only work with PNG images.  You can install `imagemagick` to use all other file types.
 ```
 brew install imagemagick
 ```
 
 If `pecan` is installed, then `xanthia` will pull it's style from `pecan`'s `style.css` file.
-
-## Notes
-
-`notify-send` uses a "Ü" character and this causes issues on some computers.  If `notify-send` does not restart `Übersicht` then try uncommenting line #26, and commenting line #27 on `notify-send`
