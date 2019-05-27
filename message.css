@@ -10,17 +10,18 @@
 	--xanthia-min-height: none;
 
 /* typography */
-	--xanthia-font: SF Mono, Lucida Grande;
+	/*the apple system unicode symbols are ugly*/
+	--xanthia-font: -apple-system, Lucida Grande;
 	--xanthia-font-size: 11px;
 	--xanthia-font-style: none;
 	--xanthia-line-height: 29px;
 	--xanthia-text-padding: 3ch;	
 		
 /* colors */
-	--xanthia-bg: #fafafa;
-	--xanthia-fg: #090909;
+	--xanthia-bg: #202020;
+	--xanthia-fg: #fefefe;
 	--xanthia-opacity: 1;
-	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.04);
+	--xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
 
 /* alignment (use "0" or "auto") */
 	--xanthia-alignment-top: 0;
@@ -37,7 +38,7 @@
 	--xanthia-border-radius-right: 3px;
 
 /* fade */
-	--xanthia-time-visible: 60s;
+	--xanthia-time-visible: auto;
 }
 
 /* get monitor width */

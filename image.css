@@ -6,7 +6,7 @@
 /* body */
 	--xanthia-image-bg: #fafafa;
 	--xanthia-image-opacity: 1;
-	--xanthia-image-shadow: 0px 4px 10px 4px rgba(0,0,0,0.2);
+	--xanthia-image-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
 	--xanthia-image-size: 150px;
 	
 /* padding from edge of screen */

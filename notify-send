@@ -104,3 +104,6 @@ flags "$@"
 #########
 # TO DO #
 #########
+
+# quit using image magick
+# use sed -i to switch the stylesheet
