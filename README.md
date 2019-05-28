@@ -50,9 +50,4 @@ screencapture -i "~/downloads/image.png" && notify-send -i "~/downloads/image.pn
 
 
 ## Optional Features
-Images can be displayed with the `notify-send` -i flag.  By default this will only work with PNG images.  You can install `imagemagick` to use all other file types.
-```
-brew install imagemagick
-```
-
 If [pecan](https://github.com/zzzeyez/pecan) is installed, then `xanthia` will pull it's style from `pecan`'s `style.css` file.

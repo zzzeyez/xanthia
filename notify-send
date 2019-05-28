@@ -3,7 +3,7 @@
 # author: daniel neemann (@zzzeyez)
 #
 # displays notifications on macos
-# requires `ubersicht` and `imagemagick`
+# requires `ubersicht`
 
 setup() {
 	SOURCE="${BASH_SOURCE[0]}"
