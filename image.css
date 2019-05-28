@@ -76,7 +76,7 @@
 	position: relative;
 	display: block;
 /* css only supports relative urls */
-	background: url("/xanthia/.cache/image.png");
+	background: url("/xanthia/.cache/image.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;

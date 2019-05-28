@@ -15,7 +15,7 @@ setup() {
 	dir="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 	cache="$dir/.cache"
 	defaults="$dir/.defaults"
-	image="$cache/image.png"
+	#image="$cache/image.png"
 	message="$cache/message"
 	if [[ ! -d "$cache" ]] ; then
 		mkdir "$cache"
@@ -37,13 +37,37 @@ exists() {
     type "$1" &> /dev/null ;
 }
 
+
+#
+# use `sed -i '' 's/image.png/image.jpg/g' image.css`
+# scss file too
+#
+# but you will need to change it back and forth
+#
+# what am i going to tell sed to change when changing it back?
+#
+# get file extension
+# ext=${path##*.}
+#
+# and everything before it
+# path=${path%.*}
+# 
+# sed -i '' "s/image.*\"/image.$ext\"/g" ~/scripts/xanthia/image.css
+#
+# probably will need to update clean() too
+#
+# line 18 defines image as cache/image.png (nvm)
+#
 icon() {
 	path="$1"
-	if test -e "$path" -a "$(file -b --mime-type $path)" = "image/png"; then
-		cp "$path" "$image"
-	else
-		convert "$path" "$image"
-	fi &&
+	ext="${path##*.}"
+	cp "$path" "$cache/image.$ext"
+	sed -i '' "s/image.*\"/image.$ext\"/g" "$dir/image.css"
+	#if test -e "$path" -a "$(file -b --mime-type $path)" = "image/png"; then
+	#	cp "$path" "$image"
+	#else
+	#	convert "$path" "$image"
+	#fi &&
 	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-image-coffee"'
 }
 
