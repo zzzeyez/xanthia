@@ -4,9 +4,9 @@
 :root {
 	
 /* body */
-	--xanthia-image-bg: #fafafa;
+	--xanthia-image-bg: none;
 	--xanthia-image-opacity: 1;
-	--xanthia-image-shadow: 0px 4px 10px 4px rgba(0,0,0,0.0);
+	--xanthia-image-shadow: 0px 4px 10px 4px rgba(0,0,0,0.00);
 	--xanthia-image-size: 150px;
 	
 /* padding from edge of screen */
@@ -76,7 +76,7 @@
 	position: relative;
 	display: block;
 /* css only supports relative urls */
-	background: url("/xanthia/.cache/image.jpg");
+	background: url("/xanthia/.cache/image.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;

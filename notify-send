@@ -28,8 +28,6 @@ setup() {
 		if [[ "$ubersicht" = "UM-LM^Hbersicht" ]] ; then
 			ubersicht="Übersicht"
 		fi		
-	else
-		exit
 	fi
 }
 
@@ -37,53 +35,27 @@ exists() {
     type "$1" &> /dev/null ;
 }
 
+refresh() {
+	if [[ "$ubersicht" ]] ; then
+		osascript -e 'tell application "'$ubersicht'" to refresh widget id "'$1'"'
+	fi
+}
 
-#
-# use `sed -i '' 's/image.png/image.jpg/g' image.css`
-# scss file too
-#
-# but you will need to change it back and forth
-#
-# what am i going to tell sed to change when changing it back?
-#
-# get file extension
-# ext=${path##*.}
-#
-# and everything before it
-# path=${path%.*}
-# 
-# sed -i '' "s/image.*\"/image.$ext\"/g" ~/scripts/xanthia/image.css
-#
-# probably will need to update clean() too
-#
-# line 18 defines image as cache/image.png (nvm)
-#
 icon() {
 	path="$1"
-	ext="${path##*.}"
-	cp "$path" "$cache/image.$ext"
-	sed -i '' "s/image.*\"/image.$ext\"/g" "$dir/image.css"
-	#if test -e "$path" -a "$(file -b --mime-type $path)" = "image/png"; then
-	#	cp "$path" "$image"
-	#else
-	#	convert "$path" "$image"
-	#fi &&
-	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-image-coffee"'
+	if [[ -f "$path" ]] ; then
+		ext="${path##*.}"
+		cp "$path" "$cache/image.$ext" &&
+		sed -i '' "s/image.*\"/image.$ext\"/g" "$dir/image.css" &&
+		refresh xanthia-image-coffee
+	else
+		echo "$path was not found"
+	fi
 }
 
 notify() {
 	echo "$1" > "$message" &&
-	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-message-coffee"'
-}
-
-clean() {
-	sleep 1s &&
-	if [[ -f "$image" ]] ; then
-		cp "$defaults/image.png" "$image"
-	fi
-	if [[ -f "$message" ]] ; then
-		cp "$defaults/message" "$message"
-	fi
+	refresh xanthia-message-coffee
 }
 
 help() {
@@ -91,7 +63,7 @@ help() {
 "xanthia: a notification system for macOS
 
 Usage: notify-send [option] [argument]
-       [-i 'path/to/image'] [-m 'message']
+       [-i 'path/to/image'] [-m 'message'] [-c]
        
 Example: notify-send -m \"file saved\"
          notify-send -i \"~/downloads/img.jpg\" -m \"img.jpg saved\"
@@ -100,12 +72,14 @@ Example: notify-send -m \"file saved\"
 }
 
 flags() {
-	while getopts m:i:h opt
+	while getopts m:i:ch opt
 		do
 			case $opt in
 			m) notify "$OPTARG"
 			;;
 			i) icon "$OPTARG"
+			;;
+			c) rm -rf "$cache"
 			;;
 			h) help && exit
 			;;
@@ -123,11 +97,3 @@ flags() {
 
 setup
 flags "$@"
-#clean 
-
-#########
-# TO DO #
-#########
-
-# quit using image magick
-# use sed -i to switch the stylesheet
