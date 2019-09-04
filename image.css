@@ -27,7 +27,8 @@
 	--xanthia-image-border: 0;
 
 /* fade */
-	--xanthia-image-time-visible: 60s;
+	/* set to 'auto' for infinite' */
+	--xanthia-image-time-visible: auto;
 }
 
 /* Get monitor width */
