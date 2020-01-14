@@ -5,5 +5,5 @@ ps cax | grep bersicht > /dev/null
 if [ $? -eq 0 ]; then
 	# stupid umlaut character
 	ubersicht="$(ps ax | grep sicht | awk '{print $5}' | head -1 | cut -d/ -f3 | cut -d. -f1)"
-	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-messagestyle-coffee"'
+	osascript -e 'tell application "'$ubersicht'" to refresh widget id "xanthia-messagestyle-jsx"'
 fi
