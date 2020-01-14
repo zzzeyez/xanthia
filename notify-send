@@ -47,7 +47,7 @@ icon() {
 		ext="${path##*.}"
 		cp "$path" "$cache/image.$ext" &&
 		sed -i '' "s/image.*\"/image.$ext\"/g" "$dir/image.css" &&
-		refresh xanthia-image-coffee
+		refresh xanthia-image-jsx
 	else
 		echo "$path was not found"
 	fi
@@ -55,7 +55,7 @@ icon() {
 
 notify() {
 	echo "$1" > "$message" &&
-	refresh xanthia-message-coffee
+	refresh xanthia-message-jsx
 }
 
 help() {
