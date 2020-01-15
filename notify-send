@@ -47,7 +47,7 @@ icon() {
 		ext="${path##*.}"
 		cp "$path" "$cache/image.$ext" &&
 		sed -i '' "s/image.*\"/image.$ext\"/g" "$dir/image.css" &&
-		refresh xanthia-image-jsx
+		refresh xanthia-image-coffee
 	else
 		echo "$path was not found"
 	fi
@@ -55,13 +55,12 @@ icon() {
 
 notify() {
 	echo "$1" > "$message" &&
-	refresh xanthia-message-jsx
+	refresh xanthia-message-coffee
 }
 
 help() {
 	printf "%s" \
 "xanthia: a notification system for macOS
-
 Usage: notify-send [option] [argument]
        [-i 'path/to/image'] [-m 'message'] [-c]
        
