@@ -1,38 +1,5 @@
-/* pecan is a bar for Ubersicht */
+/* xanthia is a notification system for Ubersicht */
 /* written by daniel neemann (@zzzeyez) */
-/* import colors */
-:root {
-  /* size */
-  --xanthia-max-width: none;
-  --xanthia-max-height: 29px;
-  --xanthia-min-width: none;
-  --xanthia-min-height: none;
-  /* typography */
-  /*the apple system unicode symbols are ugly*/
-  --xanthia-font: -apple-system, BlinkMacSystemFont, Lucida Grande;
-  --xanthia-font-size: 11.5px;
-  --xanthia-font-style: none;
-  --xanthia-line-height: 29px;
-  --xanthia-text-padding: 3ch;
-  /* colors */
-  --xanthia-bg: #202020;
-  --xanthia-fg: #fafafa;
-  --xanthia-opacity: 1;
-  --xanthia-shadow: 0px 4px 10px 4px rgba(0,0,0,0.00);
-  /* alignment (use "0" or "auto") */
-  --xanthia-alignment-top: 0;
-  --xanthia-alignment-right: 0;
-  --xanthia-alignment-bottom: auto;
-  --xanthia-alignment-left: auto;
-  /* padding */
-  --xanthia-padding-v: 10px;
-  --xanthia-padding-h: 10px;
-  /* corner radius (for rounded corners) */
-  --xanthia-border-radius-left: 3px;
-  --xanthia-border-radius-right: 3px;
-  /* fade */
-  --xanthia-time-visible: auto;
-}
 
 /* get monitor width */
 .screen {
@@ -42,49 +9,49 @@
 
 .xanthiamessage {
   /* body */
-  background-color: var(--pecan-xanthia-bg, var(--xanthia-bg));
-  opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity));
-  min-width: var(--pecan-xanthia-min-width, var(--xanthia-min-width));
-  min-height: var(--pecan-xanthia-min-height, var(--xanthia-min-height));
-  max-width: var(--pecan-xanthia-max-width, var(--xanthia-max-width));
-  max-height: var(--pecan-xanthia-max-height, var(--xanthia-max-height));
+  background-color: var(--background-xanthia, var(--default-background-xanthia, #202020));
+  opacity: var(--opacity-xanthia, 1);
   display: block;
   white-space: nowrap;
   position: absolute;
   overflow: hidden;
-  /* typography */
-  color: var(--pecan-xanthia-fg, var(--xanthia-fg));
-  font: var(--pecan-xanthia-font-size, var(--xanthia-font-size)) var(--pecan-xanthia-font, var(--xanthia-font));
-  font-style: var(--pecan-xanthia-font-style, var(--xanthia-font-style));
-  line-height: var(--pecan-xanthia-line-height, var(--xanthia-line-height));
-  text-overflow: ellipsis;
-  /* padding */
-  padding: 0 var(--pecan-xanthia-text-padding, var(--xanthia-text-padding));
-  margin-top: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
-  margin-right: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
-  margin-bottom: var(--pecan-xanthia-padding-v, var(--xanthia-padding-v));
-  margin-left: var(--pecan-xanthia-padding-h, var(--xanthia-padding-h));
+
   /* alignment */
-  top: var(--pecan-xanthia-alignment-top, var(--xanthia-alignment-top));
-  right: var(--pecan-xanthia-alignment-right, var(--xanthia-alignment-right));
-  bottom: var(--pecan-xanthia-alignment-bottom, var(--xanthia-alignment-bottom));
-  left: var(--pecan-xanthia-alignment-left, var(--xanthia-alignment-left));
+  top: 0;
+  right: var(--alignment-right-xanthia, 0);
+  bottom: auto;
+  left: var(--alignment-left-xanthia, auto);
+  margin-top: var(--margin-top-xanthia, var(--default-margin-top-xanthia, 10px));
+  margin-right: var(--margin-horizontal-xanthia, var(--default-margin-horizontal-xanthia, 10px));
+  margin-left: var(--margin-horizontal-xanthia, 10px);
+
+  /* typography */
+  color: var(--foreground-xanthia, var(--default-foreground-xanthia, #fafafa));
+  font-family: var(--font, var(--default-xanthia-font-family, -apple-system)), BlinkMacSystemFont, Lucida Grande;
+  font-size: var(--font-size, var(--default-xanthia-font-size, 11.5px));
+  line-height: var(--height-xanthia, var(--default-height-xanthia-image, 29px));
+  text-overflow: ellipsis;
+  padding: 0 var(--text-padding, 3ch);
+
   /* etc */
-  border-radius: var(--pecan-xanthia-border-radius, var(--xanthia-border-radius));
-  border-top-left-radius: var(--pecan-xanthia-border-radius-left, var(--xanthia-border-radius-left));
-  border-top-right-radius: var(--pecan-xanthia-border-radius-right, var(--xanthia-border-radius-right));
-  border-bottom-right-radius: var(--pecan-xanthia-border-radius-right, var(--xanthia-border-radius-right));
-  border-bottom-left-radius: var(--pecan-xanthia-border-radius-left, var(--xanthia-border-radius-left));
-  box-shadow: var(--pecan-xanthia-shadow, var(--xanthia-shadow));
+  border-top-left-radius: var(--border-radius-left-xanthia, 3px);
+  border-bottom-left-radius: var(--border-radius-right-xanthia, 3px);
+  border-top-right-radius: var(--border-radius-right-xanthia, var(--default-border-radius-right-xanthia, 3px));
+  border-bottom-right-radius: var(--border-radius-left-xanthia, var(--default-border-radius-right-xanthia, 3px));
+  box-shadow: var(--shadow-xanthia, var(--default-shadow-xanthia, 0px 4px 10px 4px rgba(0, 0, 0, 0.1)));
+
+  /* fade and order */
   z-index: 2;
-  animation: fadeinout var(--pecan-xanthia-time-visible, var(--xanthia-time-visible)) linear forwards;
+  animation: fadeinout var(--time-visible-xanthia, auto) linear forwards;
 }
 
 @keyframes fadeinout {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
   }
-  1%, 99% {
-    opacity: var(--pecan-xanthia-opacity, var(--xanthia-opacity));
+  1%,
+  99% {
+    opacity: var(--opacity-xanthia, 1);
   }
 }

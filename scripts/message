@@ -4,7 +4,7 @@ cache="xanthia/.cache"
 defaults="xanthia/.defaults"
 
 if [[ -d "$cache" ]] ; then
-	head -1 "$cache/message"
+	tail -1 "$cache/message"
 else
 	mkdir "$cache" &&
 	cp "$defaults/image.png" "$cache/image.png"
