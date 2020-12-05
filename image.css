@@ -30,7 +30,7 @@
   left: var(--alignment-left-xanthia-image, var(--default-alignment-left-xanthia-image, 0));
 
   /* padding from edges of screen */
-  margin-top: var(--margin-top-xanthia, var(--default-margin-top-xanthia-image, 10px));
+  margin-top: var(--margin-top-xanthia-image, var(--default-margin-top-xanthia-image, 10px));
   margin-right: var(--margin-horizontal-xanthia-image, var(--default-margin-horizontal-xanthia-image, 10px));
   margin-left: var(--margin-horizontal-xanthia-image, 10px);
 
